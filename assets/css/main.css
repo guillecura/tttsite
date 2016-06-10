@@ -4,10 +4,21 @@
   padding: 0;
 }
 
+html {
+  font-size: 20px;
+}
+
 body {
   background-color: #212121;
   color: #ffffff;
+  font-family: 'Arial', 'Helvetica', sans-serif;
   height: 100vh;
+  width: 100%;
+}
+
+main {
+  display: block;
+  height: calc(100% - 5vh);
   position: relative;
   width: 100%;
 }
@@ -23,10 +34,34 @@ body {
 }
 
 .logo {
-  background-image: url('assets/img/logo-ttt.svg');
+  background-image: url('../img/logo-ttt.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  display: block;
+  font-size: 0;
   height: 40vh;
+  margin-bottom: 20px;
   width: 40vh;
+}
+
+.copy {
+  font-size: 3vh;
+  letter-spacing: .3em;
+  line-height: 48px;
+  text-transform: uppercase;
+}
+
+footer {
+  height: 5vh;
+  text-align: center;
+}
+
+footer ul li {
+  display: inline-block;
+  font-size: 2vh;
+  line-height: 5vh;
+  margin: 0 10px;
+  opacity: .5;
+  vertical-align: top;
 }
