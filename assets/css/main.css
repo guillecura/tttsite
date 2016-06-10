@@ -5,6 +5,8 @@
 }
 
 body {
+  background-color: #212121;
+  color: #ffffff;
   height: 100vh;
   position: relative;
   width: 100%;
@@ -18,4 +20,13 @@ body {
   top: 50%;
   transform: translateY(-50%);
   width: 100%;
+}
+
+.logo {
+  background-image: url('assets/img/logo-ttt.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 40vh;
+  width: 40vh;
 }
