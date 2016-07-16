@@ -1,26 +1,21 @@
 {{!< default}}
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
-
-<header class="main-nav">
-  {{#if @blog.logo}}
-    <a class="logo" href="{{@blog.url}}" style="background-image: url('{{@blog.logo}}');">
-      {{@blog.title}}
-    </a>
-  {{else}}
-    <a class="no-logo" href="{{@blog.url}}">
-      {{@blog.title}}
-    </a>
-  {{/if}}
-</header>
-
 <div class="site-wrapper">
-  {{!-- The big featured header --}}
-  <header class="hero-section {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
-    <div>
-      <h1 class="main-logo" style="background-image: url({{@blog.logo}});">{{@blog.title}}</h1>
-    </div>
-    <a class="anchor" href="#content"></a>
-  </header>
+  {{#if @blog.cover}}
+    <header class="hero-section">
+      <span class="blog-cover" style="background-image: url('{{@blog.cover}}')"></span>
+      {{#if @blog.title}}
+        <div class="blog-title">
+          <div>
+            <h1>{{@blog.title}}</h1>
+            {{#if @blog.description}}
+              <h2>{{@blog.description}}</h2>
+            {{/if}}
+          </div>
+        </div>
+      {{/if}}
+    </header>
+  {{/if}}
 
   {{!-- The main content area on the homepage --}}
   <main id="content" name="content" class="content" role="main">

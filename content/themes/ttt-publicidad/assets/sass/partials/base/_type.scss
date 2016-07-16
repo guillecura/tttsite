@@ -21,17 +21,6 @@ a {
 
 // Heading styles
 // -----------------------------------------------------------------------------
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: $bold;
-  text-shadow: .066em .066em $secondary;
-  text-transform: uppercase;
-}
-
 h1 {font-size: $fh1;}
 
 h2 {font-size: $fh2;}

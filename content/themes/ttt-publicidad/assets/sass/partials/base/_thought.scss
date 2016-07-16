@@ -42,7 +42,7 @@
 // Date ------------------------------------------------------------------------
   .post-date {
     font-size: $ftiny;
-    font-weight: $light;
+    font-weight: $regular;
     line-height: $line-height;
   }
 // -----------------------------------------------------------------------------
@@ -62,7 +62,7 @@
 
     [class*='tag-'] {
       // scss-lint:disable NestingDepth
-      font-weight: $light;
+      font-weight: $regular;
 
       &::after {
         content: ', ';

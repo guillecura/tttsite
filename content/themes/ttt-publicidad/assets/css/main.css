@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Eczar:300,400,600,700,800';
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900';
 @keyframes item-in {
   from {
     opacity: 0;
@@ -69,9 +69,8 @@ html {
 
 body {
   background-color: white;
-  border: 10px solid #0d1d2b;
   color: #0d1d2b;
-  font-family: "Eczar", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-feature-settings: 'kern';
   font-kerning: normal;
   font-smooth: always;
@@ -104,7 +103,7 @@ body {
           left: calc(-66vw + 10px); } }
 
 .site-wrapper {
-  min-height: calc(100vh - 340px);
+  min-height: calc(100vh - 80px);
   position: relative;
   width: 100%; }
   .site-wrapper .content {
@@ -225,7 +224,7 @@ body {
   border: 1px solid black;
   color: black;
   display: inline-block;
-  font-weight: 600;
+  font-weight: 500;
   height: 60px;
   line-height: 60px;
   padding: 0 20px;
@@ -240,94 +239,19 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 320px;
-  padding: 30px 15px;
+  height: 60px;
   position: relative;
   width: 100%; }
   @media (max-width: 640px) {
     .site-footer {
       height: auto;
       text-align: center; } }
-  .site-footer > div {
-    max-width: 1024px;
-    position: relative;
-    width: 100%; }
-    .site-footer > div > figure {
-      display: inline-block;
-      margin-right: -5px;
-      vertical-align: top;
-      width: 50%; }
-      @media (max-width: 640px) {
-        .site-footer > div > figure {
-          display: block;
-          width: 100%; } }
-      .site-footer > div > figure:last-of-type {
-        text-align: right; }
-        @media (max-width: 640px) {
-          .site-footer > div > figure:last-of-type {
-            text-align: center; } }
-  .site-footer .logo {
-    display: inline-block;
-    margin-right: -5px;
-    vertical-align: top;
-    background-image: url("../img/logo-ayn-inv.svg");
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: contain;
-    font-size: 0;
-    height: 6rem;
-    width: 12rem; }
-  .site-footer .no-logo {
-    display: inline-block;
-    margin-right: -5px;
-    vertical-align: top;
-    font-size: 1.5rem;
-    left: 10px;
-    line-height: 80px; }
-  .site-footer .contact-us {
-    border: 3px solid #f2ff15;
-    color: white;
-    display: inline-block;
-    font-size: 1rem;
-    font-weight: 400;
-    list-style: none;
-    margin: 10px 0;
-    padding: 3px 20px;
-    transition: all 150ms ease-out; }
-    @media (max-width: 640px) {
-      .site-footer .contact-us {
-        margin: 10px auto; }
-        .site-footer .contact-us h2 {
-          font-size: 10vw; } }
-    .site-footer .contact-us:hover {
-      border: 3px solid white;
-      color: white; }
-  .site-footer .address {
-    display: inline-block;
-    margin-right: -5px;
-    vertical-align: top;
-    color: white;
-    font-size: 0.85rem;
-    line-height: 1.11em;
-    margin-left: 10px;
-    padding: 15px;
-    text-align: left; }
-    @media (max-width: 854px) {
-      .site-footer .address {
-        display: block;
-        margin-left: 0;
-        padding-left: 5px; } }
-    @media (max-width: 640px) {
-      .site-footer .address {
-        text-align: center; } }
-    .site-footer .address p + p {
-      margin-top: 10px; }
   .site-footer .copyright {
     bottom: 0;
-    color: #f2ff15;
+    color: white;
     font-size: 0.85rem;
     left: 0;
-    line-height: 2.22em;
+    line-height: 60px;
     position: absolute;
     text-align: center;
     width: 100%; }
@@ -339,24 +263,24 @@ body {
 
 .hero-section {
   background-attachment: fixed;
+  background-color: #0d1d2b;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: calc(100vh - 10px);
-  max-height: calc(100vh - 10px);
-  min-height: 450px;
+  height: 100vh;
+  height: 100vh;
   position: relative; }
   .hero-section::before {
-    border: 3px solid #f2ff15;
+    border: 30px solid white;
     content: '';
     display: block;
-    height: calc(100% - 26px);
-    left: 10px;
+    height: calc(100% - 60px);
+    left: 0;
     pointer-events: none;
     position: absolute;
-    right: 10px;
-    top: 10px;
-    width: calc(100% - 26px);
+    right: 0;
+    top: 0;
+    width: calc(100% - 60px);
     z-index: 1; }
     @media (max-width: 640px) {
       .hero-section::before {
@@ -366,41 +290,47 @@ body {
         top: 5px;
         width: calc(100% - 16px); } }
   .hero-section.no-cover {
-    background-color: white; }
+    background-color: #0d1d2b; }
   .hero-section.hero-section:not(.no-cover) {
     animation: item-in .666s ease-out forwards; }
-  .hero-section > div {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: center;
-    width: 100%; }
-    .hero-section > div > * {
-      animation: item-in .666s ease-out forwards; }
-    .hero-section > div > .main-logo {
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: contain;
-      font-size: 0;
-      height: 25vw;
-      margin-bottom: 40px;
-      width: 25vw; }
-      @media (max-width: 640px) {
-        .hero-section > div > .main-logo {
-          height: 50vw;
-          width: 50vw; } }
-  .hero-section > .anchor {
-    background-image: url("../img/anchor.svg");
-    background-position: center;
+  .hero-section > * {
+    animation: item-in .666s ease-out forwards; }
+  .hero-section .blog-cover {
+    background-position: right top -10vh;
     background-repeat: no-repeat;
-    background-size: contain;
-    bottom: 60px;
-    cursor: pointer;
+    background-size: 65vh;
     display: block;
-    left: calc(50% - 30px);
-    height: 60px;
+    height: calc(100vh - 30px);
     position: absolute;
-    width: 60px; }
+    right: 30px;
+    top: 0;
+    width: 65vh;
+    z-index: 2; }
+  .hero-section .blog-title {
+    height: calc(100vh - 30px);
+    left: 15px;
+    position: absolute;
+    z-index: 2; }
+    .hero-section .blog-title > div {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%); }
+    .hero-section .blog-title h1 {
+      color: #f2ff15;
+      font-size: 8vw;
+      font-weight: 500;
+      line-height: 1.11em;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      word-spacing: 100vw; }
+    .hero-section .blog-title h2 {
+      color: #f2ff15;
+      font-size: 5vw;
+      font-weight: 300;
+      line-height: 1.11em;
+      letter-spacing: .375em;
+      text-transform: uppercase;
+      word-spacing: 100vw; }
 
 body > nav {
   background-color: #0d1d2b;
@@ -601,7 +531,7 @@ body > nav {
   .post-content blockquote {
     border-left: 6px solid #d9dadc;
     font-size: 1.25rem;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.11em;
     margin: 20px auto;
     padding: 0 20px; }
@@ -661,16 +591,6 @@ a {
   color: inherit;
   cursor: pointer;
   text-decoration: none; }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 700;
-  text-shadow: 0.066em 0.066em #f2ff15;
-  text-transform: uppercase; }
 
 h1 {
   font-size: 3.5rem; }
@@ -748,8 +668,8 @@ h6 {
     width: 100%; }
   .work-sample .post-title {
     font-weight: 400;
-    height: 320px;
-    line-height: 320px;
+    height: 60px;
+    line-height: 60px;
     text-align: center; }
     @media (max-width: 640px) {
       .work-sample .post-title {
@@ -758,7 +678,7 @@ h6 {
 .tag-template .content {
   animation: op-in .999s ease-out forwards;
   margin-bottom: 50px;
-  min-height: calc(100vh - 600px);
+  min-height: calc(100vh - 340px);
   text-align: left;
   width: 1024px; }
   @media (max-width: 1044px) {
@@ -967,7 +887,7 @@ h6 {
   margin-right: -5px;
   vertical-align: top;
   margin-left: 10px;
-  margin-bottom: calc(15vh + 106.66667px);
+  margin-bottom: calc(15vh + 20px);
   position: relative;
   text-align: center;
   top: 15vh;
@@ -976,7 +896,7 @@ h6 {
   @media (max-width: 854px) {
     .tag-our-brands {
       display: block;
-      margin-bottom: 166.66667px;
+      margin-bottom: 80px;
       margin-left: auto;
       margin-right: auto;
       top: 60px;

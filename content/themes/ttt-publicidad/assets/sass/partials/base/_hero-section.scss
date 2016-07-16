@@ -7,25 +7,25 @@
 // -----------------------------------------------------------------------------
 .hero-section {
   background-attachment: fixed;
+  background-color: $primary;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: $site-height;
-  max-height: $site-height;
-  min-height: $hero-min-height;
+  height: $site-height;
   position: relative;
 
   &::before {
-    border: $border solid $secondary;
+    border: $distance * 3 solid $white;
     content: '';
     display: block;
-    height: calc(100% - #{$distance * 2 + $border * 2});
-    left: $distance;
+    height: calc(100% - #{$distance * 6});
+    left: 0;
     pointer-events: none;
     position: absolute;
-    right: $distance;
-    top: $distance;
-    width: calc(100% - #{$distance * 2 + $border * 2});
+    right: 0;
+    top: 0;
+    width: calc(100% - #{$distance * 6});
     z-index: 1;
 
     @include mq(mobile) {
@@ -37,51 +37,60 @@
     }
   }
 
-  &.no-cover {background-color: $white;}
+  &.no-cover {background-color: $primary;}
 
   &.hero-section:not(.no-cover) {
     animation: item-in .666s ease-out forwards; // Slide In animation
   }
 
-// Main Header
+// Main image
 // -----------------------------------------------------------------------------
-  > div {
-    @include vertical-center;
-    text-align: center;
-    width: 100%;
-
-    > * {
-      animation: item-in .666s ease-out forwards; // Slide In animation
-    }
-
-    > .main-logo {
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: contain;
-      font-size: 0;
-      height: $hero-logo;
-      margin-bottom: $distance * 4;
-      width: $hero-logo;
-
-      @include mq(mobile) {
-        height: $hero-logo * 2;
-        width: $hero-logo * 2;
-      }
-    }
+  > * {
+    animation: item-in .666s ease-out forwards; // Slide In animation
   }
 
-  > .anchor {
-    background-image: url('../img/anchor.svg');
-    background-position: center;
+  .blog-cover {
+    background-position: right top -10vh;
     background-repeat: no-repeat;
-    background-size: contain;
-    bottom: $distance * 6;
-    cursor: pointer;
+    background-size: 65vh;
     display: block;
-    left: calc(50% - #{$button-height / 2});
-    height: $button-height;
+    height: calc(100vh - #{$distance * 3});
     position: absolute;
-    width: $button-height;
+    right: $distance * 3;
+    top: 0;
+    width: 65vh;
+    z-index: 2;
+  }
+
+  .blog-title {
+    height: calc(100vh - #{$distance * 3});
+    left: $distance * 1.5;
+    position: absolute;
+    z-index: 2;
+
+    > div {
+      @include vertical-center;
+    }
+
+    h1 {
+      color: $secondary;
+      font-size: 8vw;
+      font-weight: $medium;
+      line-height: $line-height;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      word-spacing: 100vw;
+    }
+
+    h2 {
+      color: $secondary;
+      font-size: 5vw;
+      font-weight: $light;
+      line-height: $line-height;
+      letter-spacing: .375em;
+      text-transform: uppercase;
+      word-spacing: 100vw;
+    }
   }
 // -----------------------------------------------------------------------------
 }

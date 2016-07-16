@@ -43,37 +43,7 @@
 
     {{!-- The tiny footer at the very bottom --}}
     <footer class="site-footer">
-      <div>
-        <figure>
-          {{#if @blog.logo}}
-            <a class="logo" href="{{@blog.url}}">
-              {{@blog.title}}
-            </a>
-          {{else}}
-            <a class="no-logo" href="{{@blog.url}}">
-              {{@blog.title}}
-            </a>
-          {{/if}}
-
-          {{#get "posts" filter="featured:true" order="published_at desc" include="tags" as |address|}}
-            {{#foreach address}}
-              {{#has tag="address"}}
-                <section class="address">
-                  {{content}}
-                </section>
-              {{/has}}
-            {{/foreach}}
-          {{/get}}
-        </figure>
-
-        <figure>
-          <a class="contact-us" href="mailto:info@aynimportaciones.com"><h2>Contact Us</h2></a>
-        </figure>
-
-      </div>
-
-      <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}} Montevideo, Uruguay</section>
-
+      <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
     </footer>
 
     {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}

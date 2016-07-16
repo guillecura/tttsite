@@ -14,6 +14,12 @@
     var $postContent = $(".post-content");
     $postContent.fitVids();
 
+    // Parallax
+    $document.on('scroll', function () {
+      $('.hero-section .blog-cover').css(
+        'top', $document.scrollTop() / 3);
+    });
+
     // Smooth scroll
     $('a[href*="#"]:not([href="#"])').click(function() {
       if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
