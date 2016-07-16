@@ -40,6 +40,7 @@
 
       li {
         display: inline-block;
+        padding: $distance / 2 0;
 
         > * {
           font-size: $fsmall;
@@ -75,6 +76,24 @@
     .phone-link::before {
       background-image: url('../img/icon-phone_1.svg');
     }
+  }
+}
+
+.home-template {
+  background-color: $primary;
+
+  &::after {
+    border: $distance * 3 solid $white;
+    border-bottom: 0;
+    content: '';
+    height: calc(100% - #{$distance * 3});
+    left: 0;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: calc(100% - #{$distance * 6});
+    z-index: 2;
   }
 }
 // -----------------------------------------------------------------------------

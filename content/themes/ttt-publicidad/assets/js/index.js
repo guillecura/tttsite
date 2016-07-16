@@ -37,36 +37,24 @@
       }
     });
 
-    // Sticky navs
-    var $mainNav = $("header.main-nav");
-    var $pageNav = $("header.pages-nav");
-    var height = $(window).height() - 100;
-    var height2 = $("header.main-header").height();
-
-    $(window).scroll(function() {
-      var scroll = $(window).scrollTop();
-
-      // Home page
-      if (scroll >= height) {
-        $mainNav.addClass("active");
-      } else {
-        $mainNav.removeClass("active");
-      }
-
-      // Pages page
-      if (scroll >= height2) {
-        $pageNav.addClass("active");
-      } else {
-        $pageNav.removeClass("active");
-      }
-    });
-
 
     // Menu & menu button animation
     var $btn = $(".menu-icon");
     var $btnNav = $("body > nav > ul a");
     var $body = $("body");
     var $nav = $("body > nav");
+
+    $(window).scroll(function() {
+      var scroll = $(window).scrollTop();
+      var height = $(window).height();
+
+      // Home page
+      if (scroll >= height - 70) {
+        $btn.addClass("icon-blue");
+      } else {
+        $btn.removeClass("icon-blue");
+      }
+    });
 
     $btn.on("click tap", function(e){
       e.preventDefault();

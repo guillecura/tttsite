@@ -24,6 +24,10 @@
     background-image: url('../img/icon-menu_close.svg');
   }
 
+  &.icon-blue {
+    background-image: url('../img/icon-menu_blue.svg');
+  }
+
   &:focus {
     outline: none;
   }

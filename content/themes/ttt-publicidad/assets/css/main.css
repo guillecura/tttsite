@@ -262,34 +262,14 @@ body {
         position: static; } }
 
 .hero-section {
-  background-attachment: fixed;
-  background-color: #0d1d2b;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: calc(100vh - 30px);
+  max-width: calc(100% - 60px);
   position: relative;
-  z-index: 2; }
-  .hero-section::before {
-    border: 30px solid white;
-    border-bottom: 0;
-    content: '';
-    display: block;
-    height: calc(100% - 30px);
-    left: 0;
-    pointer-events: none;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: calc(100% - 60px);
-    z-index: 1; }
-    @media (max-width: 640px) {
-      .hero-section::before {
-        height: calc(100% - 16px);
-        left: 5px;
-        right: 5px;
-        top: 5px;
-        width: calc(100% - 16px); } }
+  width: 100%;
+  z-index: 3; }
   .hero-section.no-cover {
     background-color: #0d1d2b; }
   .hero-section.hero-section:not(.no-cover) {
@@ -303,15 +283,15 @@ body {
     display: block;
     height: calc(100vh - 30px);
     position: absolute;
-    right: 30px;
+    right: 0;
     top: 0;
     width: 65vh;
-    z-index: 2; }
+    z-index: 5; }
   .hero-section .blog-title {
     height: calc(100vh - 30px);
-    left: 15px;
+    left: -15px;
     position: absolute;
-    z-index: 2; }
+    z-index: 5; }
     .hero-section .blog-title > div {
       position: absolute;
       top: 50%;
@@ -430,6 +410,8 @@ body > nav {
   z-index: 9999; }
   .menu-icon.nav-close {
     background-image: url("../img/icon-menu_close.svg"); }
+  .menu-icon.icon-blue {
+    background-image: url("../img/icon-menu_blue.svg"); }
   .menu-icon:focus {
     outline: none; }
 
@@ -845,7 +827,8 @@ h6 {
       text-align: center;
       width: 100%; }
       .home-template .content .white-box ul li {
-        display: inline-block; }
+        display: inline-block;
+        padding: 5px 0; }
         .home-template .content .white-box ul li > * {
           font-size: 0.85rem;
           line-height: 24px; }
@@ -867,3 +850,18 @@ h6 {
       background-image: url("../img/icon-facebook_1.svg"); }
     .home-template .content .white-box .phone-link::before {
       background-image: url("../img/icon-phone_1.svg"); }
+
+.home-template {
+  background-color: #0d1d2b; }
+  .home-template::after {
+    border: 30px solid white;
+    border-bottom: 0;
+    content: '';
+    height: calc(100% - 30px);
+    left: 0;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: calc(100% - 60px);
+    z-index: 2; }

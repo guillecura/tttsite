@@ -6,37 +6,14 @@
 // Define sizes
 // -----------------------------------------------------------------------------
 .hero-section {
-  background-attachment: fixed;
-  background-color: $primary;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: calc(#{$site-height} - #{$distance * 3});
+  max-width: calc(100% - #{$distance * 6});
   position: relative;
-  z-index: 2;
-
-  &::before {
-    border: $distance * 3 solid $white;
-    border-bottom: 0;
-    content: '';
-    display: block;
-    height: calc(100% - #{$distance * 3});
-    left: 0;
-    pointer-events: none;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: calc(100% - #{$distance * 6});
-    z-index: 1;
-
-    @include mq(mobile) {
-      height: calc(100% - #{$distance + $border * 2});
-      left: $distance / 2;
-      right: $distance / 2;
-      top: $distance / 2;
-      width: calc(100% - #{$distance + $border * 2});
-    }
-  }
+  width: 100%;
+  z-index: 3;
 
   &.no-cover {background-color: $primary;}
 
@@ -57,17 +34,17 @@
     display: block;
     height: calc(100vh - #{$distance * 3});
     position: absolute;
-    right: $distance * 3;
+    right: 0;
     top: 0;
     width: 65vh;
-    z-index: 2;
+    z-index: 5;
   }
 
   .blog-title {
     height: calc(100vh - #{$distance * 3});
-    left: $distance * 1.5;
+    left: $distance * -1.5;
     position: absolute;
-    z-index: 2;
+    z-index: 5;
 
     > div {
       @include vertical-center;
