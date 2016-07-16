@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{!-- Document Settings --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{!-- Page Meta --}}
+    {{#if tag}}
+      {{#tag}}<title>{{@blog.title}} | {{name}}</title>{{/tag}}
+    {{else}}
+      {{#if post}}
+        {{#post}}<title>{{@blog.title}} | {{title}}</title>{{/post}}
+      {{else}}
+        <title>{{@blog.title}}</title>
+      {{/if}}
+    {{/if}}
+
+    <meta name="description" content="{{meta_description}}" />
+
+    {{!-- Mobile Meta --}}
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
+    {{!-- Brand icon --}}
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+    {{!-- Styles'n'Scripts --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/main.css"}}" />
+
+    {{!-- Ghost outputs important style and meta data with this tag --}}
+    {{ghost_head}}
+</head>
+<body class="{{body_class}} nav-closed">
+
+    {{!-- The blog navigation links --}}
+    {{navigation}}
+
+    <span tabindex="0" class="menu-icon"></span>
+
+    {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+    {{{body}}}
+
+    {{!-- The tiny footer at the very bottom --}}
+    <footer class="site-footer">
+      <div>
+        <figure>
+          {{#if @blog.logo}}
+            <a class="logo" href="{{@blog.url}}">
+              {{@blog.title}}
+            </a>
+          {{else}}
+            <a class="no-logo" href="{{@blog.url}}">
+              {{@blog.title}}
+            </a>
+          {{/if}}
+
+          {{#get "posts" filter="featured:true" order="published_at desc" include="tags" as |address|}}
+            {{#foreach address}}
+              {{#has tag="address"}}
+                <section class="address">
+                  {{content}}
+                </section>
+              {{/has}}
+            {{/foreach}}
+          {{/get}}
+        </figure>
+
+        <figure>
+          <a class="contact-us" href="mailto:info@aynimportaciones.com"><h2>Contact Us</h2></a>
+        </figure>
+
+      </div>
+
+      <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}} Montevideo, Uruguay</section>
+
+    </footer>
+
+    {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    {{!-- Ghost outputs important scripts and data with this tag --}}
+    {{ghost_foot}}
+    {{!-- Fitvids makes video embeds responsive and awesome --}}
+    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/prefixfree.min.js"}}"></script>
+    {{!-- The main JavaScript file for Casper --}}
+    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+
+</body>
+</html>

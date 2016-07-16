@@ -1,0 +1,109 @@
+// =============================================================================
+// POST TYPE & TEXTS STYLES
+// =============================================================================
+
+
+// General
+// -----------------------------------------------------------------------------
+.post-content {
+  position: relative;
+
+  &:last-of-type {
+    margin-bottom: $distance * 5;
+  }
+
+  > * {
+    margin-left: 0;
+    max-width: $post-box;
+
+    @include mq(desktop) {
+      max-width: 100%;
+    }
+  }
+// Text
+// -----------------------------------------------------------------------------
+  p {
+    font-size: $fdef;
+    line-height: $line-height-big;
+
+    + p {
+      margin-top: $distance * 2;
+    }
+
+    a {
+      color: lighten($black, 33.33%);
+
+      // scss-lint:disable NestingDepth
+      &:not(.button):hover {
+        border: 0;
+        color: lighten($black, 50%);
+      }
+    }
+  }
+
+  ol,
+  ul {
+    padding-left: $distance * 2;
+
+    li {
+      font-size: $fdef;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: $line-height * 3;
+  }
+// -----------------------------------------------------------------------------
+
+
+
+// Quotes
+// -----------------------------------------------------------------------------
+  blockquote {
+    border-left: $border * 2 solid $smoke-dark;
+    font-size: $fh4;
+    font-weight: $light;
+    line-height: $line-height;
+    margin: $distance * 2 auto;
+    padding: 0 $distance * 2;
+  }
+// -----------------------------------------------------------------------------
+
+
+// Inline code
+// -----------------------------------------------------------------------------
+  code:not([class*='language-']) {
+    background-color: $smoke;
+    border: 1px solid darken($smoke-dark, 10%);
+    border-radius: $border;
+    color: $smoke;
+    font-size: $ftiny;
+    line-height: $line-height-big;
+    padding: $distance / 3 $distance / 2;
+  }
+// -----------------------------------------------------------------------------
+
+
+// Images
+// -----------------------------------------------------------------------------
+  img {
+    max-width: 100%;
+  }
+// -----------------------------------------------------------------------------
+
+
+// Lines and separators
+// -----------------------------------------------------------------------------
+  hr {
+    border: 0;
+    border-top: 1px solid $smoke-dark;
+    margin: $distance * 2 0;
+  }
+// -----------------------------------------------------------------------------
+}
+// -----------------------------------------------------------------------------

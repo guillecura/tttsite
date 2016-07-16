@@ -1,0 +1,80 @@
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
+<header class="main-nav">
+  {{#if @blog.logo}}
+    <a class="logo" href="{{@blog.url}}" style="background-image: url('{{@blog.logo}}');">
+      {{@blog.title}}
+    </a>
+  {{else}}
+    <a class="no-logo" href="{{@blog.url}}">
+      {{@blog.title}}
+    </a>
+  {{/if}}
+</header>
+
+<div class="site-wrapper">
+  {{!-- The big featured header --}}
+  <header class="hero-section {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
+    <div>
+      <h1 class="main-logo" style="background-image: url({{@blog.logo}});">{{@blog.title}}</h1>
+    </div>
+    <a class="anchor" href="#content"></a>
+  </header>
+
+  {{!-- The main content area on the homepage --}}
+  <main id="content" name="content" class="content" role="main">
+
+    {{#get "posts" filter="featured:true" order="published_at desc" include="tags" as |about|}}
+      {{#foreach about}}
+        {{#has tag="about-us"}}
+          <article class="{{post_class}}">
+            <header class="post-header">
+              <h2 class="post-title">{{title}}</h2>
+            </header>
+
+            <section class="post-content">
+              {{content}}
+            </section>
+          </article>
+        {{/has}}
+      {{/foreach}}
+    {{/get}}
+
+    {{#get "posts" filter="featured:true" order="published_at desc" include="tags" as |service|}}
+      {{#foreach service}}
+        {{#has tag="services"}}
+          <article class="{{post_class}} hi-box">
+            <header class="post-header">
+              <h2 class="post-title">{{title}}</h2>
+            </header>
+
+            <section class="post-content">
+              {{content}}
+              <a class="view-products" href="{{@blog.url}}/tag/products">VIEW THE PRODUCTS »</a>
+            </section>
+          </article>
+        {{/has}}
+      {{/foreach}}
+    {{/get}}
+
+    <article class="tag-our-brands">
+      <header class="post-header">
+        <h2 class="post-title">We work with</h2>
+      </header>
+
+      <section class="post-content">
+        {{#get "posts" order="published_at asc" include="tags" as |brand|}}
+          {{#foreach brand}}
+            {{#has tag="brand"}}
+              <figure class="brand-image" style="background-image: url('{{image}}');">
+                <img src="{{image}}" alt="{{title}}" />
+              </figure>
+            {{/has}}
+          {{/foreach}}
+        {{/get}}
+      </section>
+    </article>
+
+  </main>
+</div>

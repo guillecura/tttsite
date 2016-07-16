@@ -1,0 +1,62 @@
+// =============================================================================
+// TAG PAGE STYLES
+// =============================================================================
+
+
+// Brands
+// -----------------------------------------------------------------------------
+.tag-template .post.tag-brands {
+  border-left: $border * 2 solid transparent;
+  margin: 0;
+  max-width: $post-box;
+  transition: all 150ms ease-out;
+  width: 100%;
+
+  &:hover {
+    border-left: $border * 2 solid $primary;
+  }
+
+  &:last-of-type {
+    margin-bottom: $distance * 5;
+  }
+
+  figure {
+    @include inline-block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: $distance * 1.5;
+    max-height: 10vw;
+    max-width: 10vw;
+    min-height: 150px;
+    min-width: 150px;
+    vertical-align: middle;
+  }
+
+  section {
+    @include inline-block;
+    font-style: italic;
+    padding: $distance $distance * 3;
+    vertical-align: middle;
+
+    h5 {
+      font-style: normal;
+    }
+
+    a {
+      font-style: normal;
+      text-decoration: underline;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid $smoke-dark;
+    margin: $distance * 2 0 0;
+  }
+}
+// -----------------------------------------------------------------------------

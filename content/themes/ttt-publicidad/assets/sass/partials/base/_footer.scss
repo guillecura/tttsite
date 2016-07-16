@@ -1,0 +1,146 @@
+// =============================================================================
+// FOOTER STYLES
+// =============================================================================
+
+
+// Base Styles
+// -----------------------------------------------------------------------------
+.site-footer {
+  background-color: $primary;
+  background-image: url('../img/background-dark.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: $footer-height;
+  padding: $distance * 3 $distance * 1.5;
+  position: relative;
+  width: 100%;
+
+  @include mq(mobile) {
+    height: auto;
+    text-align: center;
+  }
+
+  > div {
+    max-width: $site-box;
+    position: relative;
+    width: 100%;
+
+    > figure {
+      @include inline-block;
+      width: 50%;
+
+      @include mq(mobile) {
+        display: block;
+        width: 100%;
+      }
+
+      &:last-of-type {
+        text-align: right;
+
+        @include mq(mobile) {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+// Logo
+// -----------------------------------------------------------------------------
+  .logo {
+    @include inline-block;
+    background-image: url('../img/logo-ayn-inv.svg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: 0;
+    height: $logo;
+    width: $logo * 2;
+  }
+
+  .no-logo {
+    @include inline-block;
+    font-size: $fh3;
+    left: $distance;
+    line-height: $menu-height;
+  }
+// -----------------------------------------------------------------------------
+
+
+// Contact Us
+// -----------------------------------------------------------------------------
+  .contact-us {
+    border: $border solid $secondary;
+    color: $white;
+    display: inline-block;
+    font-size: $fdef;
+    font-weight: $regular;
+    list-style: none;
+    margin: $distance 0;
+    padding: $border $distance * 2;
+    transition: all 150ms ease-out;
+
+    @include mq(mobile) {
+      margin: $distance auto;
+
+      h2 {
+        font-size: 10vw;
+      }
+    }
+
+    &:hover {
+      border: $border solid $white;
+      color: $white;
+    }
+  }
+// -----------------------------------------------------------------------------
+
+
+// Language
+// -----------------------------------------------------------------------------
+  .address {
+    @include inline-block;
+    color: $white;
+    font-size: $fsmall;
+    line-height: $line-height;
+    margin-left: $distance;
+    padding: $distance * 1.5;
+    text-align: left;
+
+    @include mq(hybrid) {
+      display: block;
+      margin-left: 0;
+      padding-left: $distance / 2;
+    }
+
+    @include mq(mobile) {
+      text-align: center;
+    }
+
+    p + p {
+      margin-top: $distance;
+    }
+  }
+//------------------------------------------------------------------------------
+
+
+// Copyright
+// -----------------------------------------------------------------------------
+  .copyright {
+    bottom: 0;
+    color: $secondary;
+    font-size: $fsmall;
+    left: 0;
+    line-height: $line-height * 2;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+
+    @include mq(mobile) {
+      font-size: 3.5vw;
+      margin: $distance auto 0;
+      position: static;
+    }
+  }
+}
+// -----------------------------------------------------------------------------

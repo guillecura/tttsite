@@ -1,0 +1,4 @@
+{{!-- This is the post loop - each post will be output using this markup --}}
+{{#foreach posts}}
+  <a href="{{@blog.url}}/{{slug}}" class="gallery-image {{post_class}} active" data-name="{{title}}" style="background-image: url('{{image}}');">{{title}}</a>
+{{/foreach}}

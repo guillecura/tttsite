@@ -1,0 +1,93 @@
+// =============================================================================
+// HOME PAGE CASE-STUDY BLOCK
+// =============================================================================
+
+
+// Case Study box
+// -----------------------------------------------------------------------------
+.work-sample {
+  @include inline-block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: $distance * 1.5;
+  position: relative;
+
+  @include mq(hybrid) {
+    margin-left: auto;
+  }
+
+  &:nth-child(3n-2) {
+    margin-left: 0;
+
+    @include mq(hybrid) {
+      margin-left: auto;
+    }
+  }
+
+  &:nth-child(2n) {
+    @include mq(desktop) {
+      margin-left: $distance * 1.5;
+    }
+
+    @include mq(hybrid) {
+      margin-left: auto;
+    }
+
+    @include mq(mobile) {
+      margin-left: $distance * 1.5;
+    }
+  }
+
+  &:nth-child(2n-1) {
+    @include mq(desktop) {
+      margin-left: 0;
+    }
+  }
+
+  > a > figure {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: $case-size;
+    max-height: #{($site-box - ($distance * 4)) / 4};
+    max-width: #{($site-box - ($distance * 4)) / 4};
+    width: $case-size;
+
+    @include mq(desktop) {
+      max-height: calc(((100vw - #{$distance * 4 + 300}) / 2) - #{$distance});
+      max-width: calc(((100vw - #{$distance * 4 + 300}) / 2) - #{$distance});
+    }
+
+    @include mq(hybrid) {
+      max-height: calc((100vw - #{$distance * 4 + 300}) - #{$distance});
+      max-width: calc((100vw - #{$distance * 4 + 300}) - #{$distance});
+    }
+
+    @include mq(mobile) {
+      height: $case-size-small;
+      max-height: none;
+      max-width: none;
+      width: $case-size-small;
+    }
+  }
+
+  > a > section {
+    background-color: $white;
+    display: block;
+    margin-bottom: $distance;
+    width: 100%;
+  }
+
+  .post-title {
+    font-weight: $regular;
+    height: $footer-height;
+    line-height: $footer-height;
+    text-align: center;
+
+    @include mq(mobile) {
+      font-size: $ftiny;
+    }
+  }
+}
+// -----------------------------------------------------------------------------

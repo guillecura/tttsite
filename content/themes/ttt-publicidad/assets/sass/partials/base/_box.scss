@@ -1,0 +1,52 @@
+// =============================================================================
+// POST HIGLIGHTED BOX
+// =============================================================================
+
+
+// General
+// -----------------------------------------------------------------------------
+.hi-box {
+  background-color: $primary;
+  display: block;
+  padding: $distance * 3 $distance * 4;
+  position: relative;
+
+  @include mq(mobile) {
+    padding: $distance * 2;
+  }
+
+  &::before {
+    border: $border solid $secondary;
+    content: '';
+    display: block;
+    height: calc(100% - #{$distance * 2 + $border * 2});
+    left: $distance;
+    pointer-events: none;
+    position: absolute;
+    right: $distance;
+    top: $distance;
+    width: calc(100% - #{$distance * 2 + $border * 2});
+    z-index: 1;
+
+    @include mq(mobile) {
+      height: calc(100% - #{$distance + $border * 2});
+      left: $distance / 2;
+      right: $distance / 2;
+      top: $distance / 2;
+      width: calc(100% - #{$distance + $border * 2});
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $white;
+  }
+
+  * {
+    color: $secondary;
+  }
+}

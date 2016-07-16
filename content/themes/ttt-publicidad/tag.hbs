@@ -1,0 +1,157 @@
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+<header class="pages-nav">
+  {{#if @blog.logo}}
+    <a class="logo" href="{{@blog.url}}" style="background-image: url('{{@blog.logo}}');">
+      {{@blog.title}}
+    </a>
+  {{else}}
+    <a class="no-logo" href="{{@blog.url}}">
+      {{@blog.title}}
+    </a>
+  {{/if}}
+</header>
+
+<div class="site-wrapper">
+  {{!-- If we have a tag cover, display that - else blog cover - else nothing --}}
+  <header class="main-header tag-head {{#if tag.image}}" style="background-image: url({{tag.image}}){{else}}{{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}{{/if}}"></header>
+
+  <section class="tag-description">
+    {{#tag}}
+      {{#if description}}
+        <div class="hi-box">
+          <h2>The Products.</h2>
+          <p class="page-description">{{description}}</p>
+        </div>
+      {{/if}}
+    {{/tag}}
+
+    <article class="brands">
+      {{#get "posts" order="published_at asc" include="tags" as |brand|}}
+        {{#foreach brand}}
+          {{#has tag="brand"}}
+            <figure class="brand-image" style="background-image: url('{{image}}');">
+              <img src="{{image}}" alt="{{title}}" />
+            </figure>
+          {{/has}}
+        {{/foreach}}
+      {{/get}}
+    </article>
+  </section>
+
+  {{!-- The main content area on the homepage --}}
+  <main class="content" role="main">
+
+    {{#get "posts" order="published_at asc" include="tags" as |product|}}
+      {{!-- Tobacco --}}
+      <article class="filters" name="tobacco" id="tobacco">
+        {{#foreach product}}
+          {{#has tag="tobacco"}}
+            {{#foreach tags}}
+              <h2>{{name}}</h2>
+            {{/foreach}}
+          {{/has}}
+
+          {{#has tag="molasses, cigar, accessories"}}
+            {{#foreach tags}}
+              <a href="#{{name}}" title="{{name}}" class="tag-{{id}}">{{name}}</a>
+            {{/foreach}}
+          {{/has}}
+        {{/foreach}}
+      </article>
+
+      {{#foreach product}}
+        {{#has tag="tobacco"}}
+          <figure class="gallery-image {{post_class}}" data-name="{{title}}" style="background-image: url('{{image}}');">
+            <h5>{{title}}</h5>
+            {{content}}
+          </figure>
+        {{/has}}
+      {{/foreach}}
+      {{!-- End Tobacco --}}
+
+      {{!-- Molasses --}}
+      <article class="filters" name="molasses" id="molasses">
+        {{#foreach product}}
+          {{#has tag="molasses"}}
+            {{#foreach tags}}
+              <h2>{{name}}</h2>
+            {{/foreach}}
+          {{/has}}
+
+          {{#has tag="tobacco, cigar, accessories"}}
+            {{#foreach tags}}
+              <a href="#{{name}}" title="{{name}}" class="tag-{{id}}">{{name}}</a>
+            {{/foreach}}
+          {{/has}}
+        {{/foreach}}
+      </article>
+
+      {{#foreach product}}
+        {{#has tag="molasses"}}
+          <figure class="gallery-image {{post_class}}" data-name="{{title}}" style="background-image: url('{{image}}');">
+            <h5>{{title}}</h5>
+            {{content}}
+          </figure>
+        {{/has}}
+      {{/foreach}}
+      {{!-- End Habanos --}}
+
+      {{!-- Cigar --}}
+      <article class="filters" name="cigar" id="cigar">
+        {{#foreach product}}
+          {{#has tag="cigar"}}
+            {{#foreach tags}}
+              <h2>{{name}}</h2>
+            {{/foreach}}
+          {{/has}}
+
+          {{#has tag="tobacco, molasses, accessories"}}
+            {{#foreach tags}}
+              <a href="#{{name}}" title="{{name}}" class="tag-{{id}}">{{name}}</a>
+            {{/foreach}}
+          {{/has}}
+        {{/foreach}}
+      </article>
+
+      {{#foreach product}}
+        {{#has tag="cigar"}}
+          <figure class="gallery-image {{post_class}}" data-name="{{title}}" style="background-image: url('{{image}}');">
+            <h5>{{title}}</h5>
+            {{content}}
+          </figure>
+        {{/has}}
+      {{/foreach}}
+      {{!-- End Cigar --}}
+
+      {{!-- Accessories --}}
+      <article class="filters" name="accessories" id="accessories">
+        {{#foreach product}}
+          {{#has tag="accessories"}}
+            {{#foreach tags}}
+              <h2>{{name}}</h2>
+            {{/foreach}}
+          {{/has}}
+
+          {{#has tag="tobacco, molasses, accessories"}}
+            {{#foreach tags}}
+              <a href="#{{name}}" title="{{name}}" class="tag-{{id}}">{{name}}</a>
+            {{/foreach}}
+          {{/has}}
+        {{/foreach}}
+      </article>
+
+      {{#foreach product}}
+        {{#has tag="accessories"}}
+          <figure class="gallery-image {{post_class}}" data-name="{{title}}" style="background-image: url('{{image}}');">
+            <h5>{{title}}</h5>
+            {{content}}
+          </figure>
+        {{/has}}
+      {{/foreach}}
+      {{!-- End Accessories --}}
+    {{/get}}
+      {{!-- The tag below includes the post loop - partials/loop.hbs --}}
+
+  </main>
+</div>

@@ -1,0 +1,88 @@
+// =============================================================================
+// PAGE MAIN SECTION HEADER
+// =============================================================================
+
+
+// Define sizes
+// -----------------------------------------------------------------------------
+.hero-section {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: $site-height;
+  max-height: $site-height;
+  min-height: $hero-min-height;
+  position: relative;
+
+  &::before {
+    border: $border solid $secondary;
+    content: '';
+    display: block;
+    height: calc(100% - #{$distance * 2 + $border * 2});
+    left: $distance;
+    pointer-events: none;
+    position: absolute;
+    right: $distance;
+    top: $distance;
+    width: calc(100% - #{$distance * 2 + $border * 2});
+    z-index: 1;
+
+    @include mq(mobile) {
+      height: calc(100% - #{$distance + $border * 2});
+      left: $distance / 2;
+      right: $distance / 2;
+      top: $distance / 2;
+      width: calc(100% - #{$distance + $border * 2});
+    }
+  }
+
+  &.no-cover {background-color: $white;}
+
+  &.hero-section:not(.no-cover) {
+    animation: item-in .666s ease-out forwards; // Slide In animation
+  }
+
+// Main Header
+// -----------------------------------------------------------------------------
+  > div {
+    @include vertical-center;
+    text-align: center;
+    width: 100%;
+
+    > * {
+      animation: item-in .666s ease-out forwards; // Slide In animation
+    }
+
+    > .main-logo {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      font-size: 0;
+      height: $hero-logo;
+      margin-bottom: $distance * 4;
+      width: $hero-logo;
+
+      @include mq(mobile) {
+        height: $hero-logo * 2;
+        width: $hero-logo * 2;
+      }
+    }
+  }
+
+  > .anchor {
+    background-image: url('../img/anchor.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    bottom: $distance * 6;
+    cursor: pointer;
+    display: block;
+    left: calc(50% - #{$button-height / 2});
+    height: $button-height;
+    position: absolute;
+    width: $button-height;
+  }
+// -----------------------------------------------------------------------------
+}
+// -----------------------------------------------------------------------------

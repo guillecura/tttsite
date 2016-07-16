@@ -1,0 +1,28 @@
+// =============================================================================
+// SITE MENU STYLES
+// =============================================================================
+
+
+// Icon styles
+// -----------------------------------------------------------------------------
+.menu-icon {
+  background-image: url('../img/icon-menu.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: $secondary;
+  cursor: pointer;
+  display: block;
+  height: $header-height / 3;
+  position: fixed;
+  right: $distance * 4;
+  top: $distance * 3.5;
+  width: $header-height / 3;
+  z-index: $z-top - 1;
+
+  @include mq(mobile) {
+    right: $distance * 3;
+    top: $distance * 2.5;
+  }
+}
+// -----------------------------------------------------------------------------

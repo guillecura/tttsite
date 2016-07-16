@@ -1,0 +1,146 @@
+// =============================================================================
+// HOME PAGE STYLES
+// =============================================================================
+
+
+// General
+// -----------------------------------------------------------------------------
+.home-template .content {
+  padding-top: $header-height + $distance;
+
+  @include mq(desktop) {
+    padding-left: $distance * 3;
+    padding-right: $distance * 3;
+  }
+
+  @include mq(mobile) {
+    padding-left: $distance;
+    padding-right: $distance;
+  }
+}
+
+.tag-about-us{
+  background-color: $white;
+  margin: $distance * 5 auto $distance * 8;
+  padding: $distance * 3 $distance * 4;
+  position: relative;
+
+  @include mq(desktop) {
+    margin: $distance auto $distance * 6;
+    padding: $distance * 1.5;
+  }
+
+  @include mq(hybrid) {
+    margin: 0 auto $distance * 6;
+    padding: $distance;
+  }
+
+  &::before {
+    background: $secondary;
+    bottom: -$distance / 2;
+    content: '';
+    display: block;
+    height: 10%;
+    position: absolute;
+    right: -$distance / 2;
+    width: 50%;
+    z-index: -1;
+  }
+
+  .post-header,
+  .post-content {
+    margin: 0;
+    max-width: $post-box;
+  }
+
+  @include mq(mobile) {
+    .post-header h2 {
+      line-height: $line-height;
+      margin-bottom: $distance;
+    }
+  }
+}
+
+.tag-services.hi-box {
+  @include inline-block;
+  margin-left: 0;
+  width: calc(50% - #{$distance});
+
+  @include mq(hybrid) {
+    display: block;
+    width: 100%;
+  }
+
+  @include mq(mobile) {
+    .post-header h2 {
+      line-height: $line-height;
+      margin-bottom: $distance;
+    }
+  }
+
+  .view-products {
+    color: $white;
+    float: right;
+    font-size: $fsmall;
+    margin: $distance * 2 0 0;
+
+    &:hover {
+      text-shadow: .066em .066em $secondary;
+    }
+  }
+}
+
+.tag-our-brands {
+  @include inline-block;
+  margin-left: $distance;
+  margin-bottom: calc(15vh + #{$footer-height / 3});
+  position: relative;
+  text-align: center;
+  top: 15vh;
+  vertical-align: bottom;
+  width: calc(50% - #{$distance});
+
+  @include mq(hybrid) {
+    display: block;
+    margin-bottom: $distance * 6 + $footer-height / 3;
+    margin-left: auto;
+    margin-right: auto;
+    top: $distance * 6;
+    width: 100%;
+  }
+
+  @include mq(mobile) {
+    .post-header h2 {
+      line-height: $line-height;
+      margin-bottom: $distance;
+    }
+  }
+
+  .post-content {
+    margin-bottom: 0;
+
+    figure {
+      $size: (($site-box / 2) / 3) - $distance * 5;
+
+      @include inline-block;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: $size;
+      margin-left: $distance * 2;
+      margin-right: $distance * 1.5;
+      width: $size;
+
+      @include mq(mobile) {
+        height: calc(50vw - #{$distance * 6});
+        width: calc(50vw - #{$distance * 6});
+      }
+
+      img {
+        height: 0;
+        width: 0;
+      }
+    }
+  }
+}
+// -----------------------------------------------------------------------------

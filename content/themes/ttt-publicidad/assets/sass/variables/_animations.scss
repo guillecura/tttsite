@@ -1,0 +1,124 @@
+// =============================================================================
+// SITE GENERIC ANIMATIONS
+// =============================================================================
+
+
+// Site items fade-in
+// -----------------------------------------------------------------------------
+@keyframes item-in {
+  from {
+    opacity: 0;
+    transform: translateY(#{$distance * 2});
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+// -----------------------------------------------------------------------------
+
+
+
+// Menu Zoom & Fade
+// -----------------------------------------------------------------------------
+// Menu open -------------------------------------------------------------------
+@keyframes menu-li-in {
+  from {
+    opacity: 0;
+    transform: scale(1.1) translate3d(-50%, -50%, #{$distance});
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translate3d(-50%, -50%, 0);
+  }
+}
+
+@keyframes menu-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+// Menu close ------------------------------------------------------------------
+@keyframes menu-li-out {
+  from {
+    opacity: 1;
+    transform: scale(1) translate3d(-50%, -50%, 0);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(1.1) translate3d(-50%, -50%, #{$distance});
+  }
+}
+
+@keyframes menu-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+// -----------------------------------------------------------------------------
+
+
+// Opacity-in
+// -----------------------------------------------------------------------------
+@keyframes op-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+// -----------------------------------------------------------------------------
+
+
+// Header slide-in
+// -----------------------------------------------------------------------------
+@keyframes header-in {
+  from {
+    transform: translateY(-#{$header-height});
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes menu-h-in {
+  from {
+    transform: translateY(-#{$header-height});
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+// -----------------------------------------------------------------------------
+
+
+// Blured out
+// -----------------------------------------------------------------------------
+@keyframes blured-out {
+  from {
+    -webkit-filter: blur(#{$distance / 2});
+  }
+
+  to {
+    -webkit-filter: blur(0);
+  }
+}
+// -----------------------------------------------------------------------------
