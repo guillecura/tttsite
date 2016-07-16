@@ -6,7 +6,7 @@
 // Icon styles
 // -----------------------------------------------------------------------------
 .menu-icon {
-  background-image: url('../img/icon-menu.svg');
+  background-image: url('../img/icon-menu_white.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -20,9 +20,12 @@
   width: $header-height / 3;
   z-index: $z-top - 1;
 
-  @include mq(mobile) {
-    right: $distance * 3;
-    top: $distance * 2.5;
+  &.nav-close {
+    background-image: url('../img/icon-menu_close.svg');
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 // -----------------------------------------------------------------------------

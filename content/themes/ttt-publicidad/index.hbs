@@ -1,5 +1,11 @@
 {{!< default}}
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
+{{!-- The blog navigation links --}}
+{{navigation}}
+
+<span tabindex="0" class="menu-icon"></span>
+
 <div class="site-wrapper">
   {{#if @blog.cover}}
     <header class="hero-section">

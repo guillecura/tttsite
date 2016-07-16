@@ -415,7 +415,7 @@ body > nav {
             font-size: 8vw; } }
 
 .menu-icon {
-  background-image: url("../img/icon-menu.svg");
+  background-image: url("../img/icon-menu_white.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -428,10 +428,10 @@ body > nav {
   top: 35px;
   width: 26.66667px;
   z-index: 9999; }
-  @media (max-width: 640px) {
-    .menu-icon {
-      right: 30px;
-      top: 25px; } }
+  .menu-icon.nav-close {
+    background-image: url("../img/icon-menu_close.svg"); }
+  .menu-icon:focus {
+    outline: none; }
 
 .main-nav,
 .pages-nav {
