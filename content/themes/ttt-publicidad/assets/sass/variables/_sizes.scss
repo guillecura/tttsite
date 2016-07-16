@@ -22,7 +22,7 @@ $z-top:                      10000;
 // -----------------------------------------------------------------------------
 $button-height:              60px;
 $header-height:              80px;
-$footer-height:              60px;
+$footer-height:              30px;
 $section-height:             calc(100vh - #{$footer-height + $distance * 2});
 $contact-height:             calc(100vh - #{$tag-head} - #{$header-height + $footer-height + $distance * 6});
 $post-height:                calc(100vh - #{$footer-height});

@@ -27,11 +27,12 @@
   .copyright {
     bottom: 0;
     color: $white;
-    font-size: $fsmall;
+    font-size: $ftiny;
     left: 0;
     line-height: $footer-height;
     position: absolute;
     text-align: center;
+    text-transform: uppercase;
     width: 100%;
 
     @include mq(mobile) {

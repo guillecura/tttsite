@@ -8,13 +8,13 @@
 // Nav block
 // -----------------------------------------------------------------------------
 body > nav {
-  background-color: $primary;
-  height: 100vh;
+  background-color: rgba($primary, .8);
+  height: calc(100vh - #{$distance * 6});
   overflow: hidden;
   pointer-events: none;
   position: fixed;
-  right: 0;
-  top: 0;
+  right: $distance * 3;
+  top: $distance * 3;
   transition: width 300ms ease-out;
   width: 0;
   z-index: $z-top - 2;
@@ -22,14 +22,6 @@ body > nav {
   &.opened {
     pointer-events: all;
     width: 25vw;
-
-    @include mq(hybrid) {
-      width: 50vw;
-    }
-
-    @include mq(mobile) {
-      width: 66vw;
-    }
   }
 
 
@@ -37,8 +29,7 @@ body > nav {
 // -----------------------------------------------------------------------------
   > ul {
     position: absolute;
-    right: $distance * 3;
-    text-align: right;
+    left: $distance * 6;
     top: $header-height + $distance * 3;
   }
 
@@ -52,32 +43,6 @@ body > nav {
     &.nav-current {
       a h2 {
         color: $secondary;
-        text-shadow: .066em .066em $white;
-      }
-    }
-
-    &.nav-current a h2::before {
-      @include vertical-center;
-      background-image: url('../img/icon-pointer.svg');
-      background-position: center left;
-      background-repeat: no-repeat;
-      background-size: 1vw;
-      content: '';
-      display: block;
-      height: 1vw;
-      left: calc((1vw + #{$distance}) * -1);
-      width: 1vw;
-
-      @include mq(hybrid) {
-        background-size: 2vw;
-        height: 2vw;
-        width: 2vw;
-      }
-
-      @include mq(mobile) {
-        background-size: 3vw;
-        height: 3vw;
-        width: 3vw;
       }
     }
 
@@ -87,32 +52,20 @@ body > nav {
 
     > a {
       display: inline-block;
-      font-weight: $regular;
       margin-right: 0;
       padding-left: 1vw;
       padding-right: $distance;
 
-      @include mq(hybrid) {
-        padding-left: 2vw;
-      }
-
-      @include mq(mobile) {
-        padding-left: 3vw;
-      }
-
       h2 {
         color: $white;
-        font-size: 3vw;
+        font-size: 2vw;
+        font-weight: $regular;
         line-height: $line-height * 2;
         position: relative;
         transition: all 150ms ease-out;
 
-        @include mq(hybrid) {
-          font-size: 6vw;
-        }
-
-        @include mq(mobile) {
-          font-size: 8vw;
+        &:first-letter {
+          border-bottom: $border / 1.5 solid;
         }
       }
     }
