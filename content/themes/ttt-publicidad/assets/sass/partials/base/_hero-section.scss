@@ -11,15 +11,16 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: $site-height;
-  height: $site-height;
+  height: calc(#{$site-height} - #{$distance * 3});
   position: relative;
+  z-index: 2;
 
   &::before {
     border: $distance * 3 solid $white;
+    border-bottom: 0;
     content: '';
     display: block;
-    height: calc(100% - #{$distance * 6});
+    height: calc(100% - #{$distance * 3});
     left: 0;
     pointer-events: none;
     position: absolute;

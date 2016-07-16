@@ -17,7 +17,10 @@
     // Parallax
     $document.on('scroll', function () {
       $('.hero-section .blog-cover').css(
-        'top', $document.scrollTop() / 3);
+        'top', $document.scrollTop() / 4);
+
+        $('.hero-section .blog-title').css(
+          'top', $document.scrollTop() / 2);
     });
 
     // Smooth scroll

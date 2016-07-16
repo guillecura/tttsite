@@ -19,57 +19,17 @@
 
   {{!-- The main content area on the homepage --}}
   <main id="content" name="content" class="content" role="main">
+    <div class="white-box">
+      {{#if @blog.logo}}
+        <span class="ttt-logo" style="background-image: url('{{@blog.logo}}');">{{@blog.title}}</span>
+      {{/if}}
 
-    {{#get "posts" filter="featured:true" order="published_at desc" include="tags" as |about|}}
-      {{#foreach about}}
-        {{#has tag="about-us"}}
-          <article class="{{post_class}}">
-            <header class="post-header">
-              <h2 class="post-title">{{title}}</h2>
-            </header>
+      <p>MONTEVIDEO, Uruguay</p>
 
-            <section class="post-content">
-              {{content}}
-            </section>
-          </article>
-        {{/has}}
-      {{/foreach}}
-    {{/get}}
-
-    {{#get "posts" filter="featured:true" order="published_at desc" include="tags" as |service|}}
-      {{#foreach service}}
-        {{#has tag="services"}}
-          <article class="{{post_class}} hi-box">
-            <header class="post-header">
-              <h2 class="post-title">{{title}}</h2>
-            </header>
-
-            <section class="post-content">
-              {{content}}
-              <a class="view-products" href="{{@blog.url}}/tag/products">VIEW THE PRODUCTS »</a>
-            </section>
-          </article>
-        {{/has}}
-      {{/foreach}}
-    {{/get}}
-
-    <article class="tag-our-brands">
-      <header class="post-header">
-        <h2 class="post-title">We work with</h2>
-      </header>
-
-      <section class="post-content">
-        {{#get "posts" order="published_at asc" include="tags" as |brand|}}
-          {{#foreach brand}}
-            {{#has tag="brand"}}
-              <figure class="brand-image" style="background-image: url('{{image}}');">
-                <img src="{{image}}" alt="{{title}}" />
-              </figure>
-            {{/has}}
-          {{/foreach}}
-        {{/get}}
-      </section>
-    </article>
-
+      <ul>
+        <li><a class="facebook-link" href="https://facebook.com/tttigrespublicidad">/tttigrespublicidad</a></li>
+        <li><span class="phone-link">Tel: (+598) 92 656 588 / 95 30 64 11</span></li>
+      </ul>
+    </div>
   </main>
 </div>

@@ -12,6 +12,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: $footer-height;
+  max-width: calc(100% - #{$distance * 6});
   position: relative;
   width: 100%;
 
