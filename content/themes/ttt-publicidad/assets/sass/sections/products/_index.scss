@@ -6,8 +6,6 @@
 // General
 // -----------------------------------------------------------------------------
 .page-template {
-  padding-top: $header-height / 2;
-
   .post-title {
     line-height: $line-height;
     max-width: $post-box;
@@ -29,6 +27,7 @@
 // Tag who
 .tag-who {
   margin-bottom: $header-height;
+  margin-top: $header-height / 2;
   max-width: calc(100% - #{$distance * 18});
   position: relative;
   width: 100%;

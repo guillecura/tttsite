@@ -654,22 +654,22 @@ h6 {
       .work-sample .post-title {
         font-size: 0.7rem; } }
 
-.page-template {
-  padding-top: 40px; }
-  .page-template .post-title {
-    line-height: 1.11em;
-    max-width: 640px;
-    width: 66.66%; }
-    .page-template .post-title:first-letter {
-      border-bottom: 2px solid; }
-  .page-template p {
-    font-size: 1rem;
-    max-width: 640px;
-    padding-left: 30px;
-    width: 66.66%; }
+.page-template .post-title {
+  line-height: 1.11em;
+  max-width: 640px;
+  width: 66.66%; }
+  .page-template .post-title:first-letter {
+    border-bottom: 2px solid; }
+
+.page-template p {
+  font-size: 1rem;
+  max-width: 640px;
+  padding-left: 30px;
+  width: 66.66%; }
 
 .tag-who {
   margin-bottom: 80px;
+  margin-top: 40px;
   max-width: calc(100% - 180px);
   position: relative;
   width: 100%; }

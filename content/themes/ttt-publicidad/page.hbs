@@ -28,7 +28,7 @@
     {{#get "posts" order="published_at asc" include="tags" as |about|}}
       {{#foreach about}}
         {{#has tag="who"}}
-          <article class="{{post_class}}">
+          <article class="{{post_class}}" id="{{slug}}">
             <section class="post-content">
               <h5 class="post-title">{{title}}</h5>
               <p>{{content}}</p>
@@ -39,7 +39,7 @@
         {{/has}}
 
         {{#has tag="what"}}
-          <article class="{{post_class}}">
+          <article class="{{post_class}}" id="{{slug}}">
             <section class="post-content">
               <h5 class="post-title">{{title}}</h5>
               <p>{{content}}</p>
