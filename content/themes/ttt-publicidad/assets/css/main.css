@@ -105,6 +105,23 @@ body {
   background-color: white;
   border-right: 1px solid #f2ff15;
   left: 0; }
+  .menu-left .icon-logo,
+  .menu-left .icon-name {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: 0;
+    left: 10px;
+    position: absolute;
+    width: calc(100% - 20px); }
+  .menu-left .icon-logo {
+    background-image: url("../img/logo_blue.svg");
+    top: 70px;
+    height: 100px; }
+  .menu-left .icon-name {
+    background-image: url("../img/logo-name_blue.svg");
+    bottom: 40px;
+    height: 60px; }
 
 .menu-right {
   background-color: #0d1d2b;
@@ -353,8 +370,9 @@ body > nav {
         body > nav li > a h2:first-letter {
           border-bottom: 2px solid; }
 
+.back-icon,
 .menu-icon,
-.back-icon {
+.menu-icon-left {
   background-image: url("../img/icon-menu_white.svg");
   background-position: center;
   background-repeat: no-repeat;
@@ -369,14 +387,30 @@ body > nav {
   top: 35px;
   width: 26.66667px;
   z-index: 9999; }
+  .back-icon.nav-close,
   .menu-icon.nav-close,
-  .back-icon.nav-close {
+  .menu-icon-left.nav-close {
     background-image: url("../img/icon-menu_close.svg"); }
+  .back-icon.icon-blue, .back-icon.menu-icon-left,
   .menu-icon.icon-blue,
-  .back-icon.icon-blue {
+  .menu-icon.menu-icon-left,
+  .menu-icon-left.icon-blue,
+  .menu-icon-left.menu-icon-left {
     background-image: url("../img/icon-menu_blue.svg"); }
+  .back-icon.menu-icon-left,
+  .menu-icon.menu-icon-left,
+  .menu-icon-left.menu-icon-left {
+    background-color: #f2ff15;
+    background-size: 26.66667px;
+    border-radius: 50%;
+    height: 40px;
+    right: 0;
+    top: 100px;
+    transform: translateX(50%);
+    width: 40px; }
+  .back-icon:focus,
   .menu-icon:focus,
-  .back-icon:focus {
+  .menu-icon-left:focus {
     outline: none; }
 
 .main-nav,
@@ -498,7 +532,7 @@ body > nav {
     margin: 20px 0; }
 
 .social-links {
-  bottom: 60px;
+  bottom: 40px;
   left: 0;
   list-style: none;
   position: absolute;

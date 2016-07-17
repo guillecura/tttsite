@@ -5,8 +5,9 @@
 
 // Icon styles
 // -----------------------------------------------------------------------------
+.back-icon,
 .menu-icon,
-.back-icon {
+.menu-icon-left {
   background-image: url('../img/icon-menu_white.svg');
   background-position: center;
   background-repeat: no-repeat;
@@ -26,8 +27,20 @@
     background-image: url('../img/icon-menu_close.svg');
   }
 
-  &.icon-blue {
+  &.icon-blue,
+  &.menu-icon-left {
     background-image: url('../img/icon-menu_blue.svg');
+  }
+
+  &.menu-icon-left {
+    background-color: $secondary;
+    background-size: $header-height / 3;
+    border-radius: 50%;
+    height: $header-height / 2;
+    right: 0;
+    top: $distance * 10;
+    transform: translateX(50%);
+    width: $header-height / 2;
   }
 
   &:focus {

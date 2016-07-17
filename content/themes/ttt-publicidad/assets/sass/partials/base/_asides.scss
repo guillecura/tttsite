@@ -20,6 +20,29 @@
   background-color: $white;
   border-right: 1px solid $secondary;
   left: 0;
+
+  .icon-logo,
+  .icon-name {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: 0;
+    left: $distance;
+    position: absolute;
+    width: calc(100% - #{$distance * 2});
+  }
+
+  .icon-logo {
+    background-image: url('../img/logo_blue.svg');
+    top: $distance * 7;
+    height: $distance * 10;
+  }
+
+  .icon-name {
+    background-image: url('../img/logo-name_blue.svg');
+    bottom: $distance * 4;
+    height: $distance * 6;
+  }
 }
 
 .menu-right {
