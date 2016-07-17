@@ -64,6 +64,9 @@
   margin: 0 auto;
   padding: 0; }
 
+::selection {
+  background: rgba(242, 255, 21, 0.33); }
+
 html {
   font-size: 18px; }
 
