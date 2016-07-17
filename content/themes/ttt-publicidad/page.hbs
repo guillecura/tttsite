@@ -47,8 +47,31 @@
             </section>
           </article>
         {{/has}}
+
+        {{#has tag="product"}}
+          <article class="{{post_class}}" id="{{slug}}">
+            <section class="post-content">
+              {{content}}
+            </section>
+          </article>
+        {{/has}}
       {{/foreach}}
     {{/get}}
   </article>
+
+  <section class="clients">
+    <article class="work-sample">
+      <h5>Clients</h5>
+    </article>
+    {{#get "posts" order="published_at asc" include="tags" as |client|}}
+      {{#foreach client}}
+        {{#has tag="client"}}
+          <article class="work-sample" style="background-image: url('{{image}}');">
+            <span class="post-title">{{title}}</span>
+          </article>
+        {{/has}}
+      {{/foreach}}
+    {{/get}}
+  </section>
 </main>
 {{/post}}

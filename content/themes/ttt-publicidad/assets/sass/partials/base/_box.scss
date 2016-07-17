@@ -6,17 +6,13 @@
 // General
 // -----------------------------------------------------------------------------
 .hi-box {
-  background-color: $primary;
+  background-color: $secondary;
   display: block;
   padding: $distance * 3 $distance * 4;
   position: relative;
 
-  @include mq(mobile) {
-    padding: $distance * 2;
-  }
-
   &::before {
-    border: $border solid $secondary;
+    border: $border solid $primary;
     content: '';
     display: block;
     height: calc(100% - #{$distance * 2 + $border * 2});
@@ -27,14 +23,6 @@
     top: $distance;
     width: calc(100% - #{$distance * 2 + $border * 2});
     z-index: 1;
-
-    @include mq(mobile) {
-      height: calc(100% - #{$distance + $border * 2});
-      left: $distance / 2;
-      right: $distance / 2;
-      top: $distance / 2;
-      width: calc(100% - #{$distance + $border * 2});
-    }
   }
 
   h1,
@@ -43,10 +31,50 @@
   h4,
   h5,
   h6 {
-    color: $white;
+    color: $primary;
+
+    &:first-letter {
+      border-bottom: $border / 1.5 solid;
+    }
   }
 
   * {
-    color: $secondary;
+    color: $primary;
+    width: 100%;
   }
 }
+// -----------------------------------------------------------------------------
+
+
+// -----------------------------------------------------------------------------
+.gray-box {
+  background-color: $smoke;
+  display: block;
+  padding: $distance * 10 $distance * 4;
+  position: relative;
+  text-align: center;
+
+  &::after,
+  &::before {
+    content: '•';
+    font-size: 2rem;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    transform: translateX(-50%);
+  }
+
+  &::before {
+    top: $distance * 6;
+  }
+
+  &::after {
+    bottom: $distance * 6;
+  }
+
+  * {
+    color: $primary;
+    width: 100%;
+  }
+}
+// -----------------------------------------------------------------------------

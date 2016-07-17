@@ -89,4 +89,51 @@
     }
   }
 }
+
+// Tag product
+.tag-product {
+  margin-bottom: $header-height;
+  margin-top: $header-height / 2;
+  max-width: calc(100% - #{$distance * 18});
+  position: relative;
+  width: 100%;
+
+  &::before {
+    border-top: $border / 1.5 solid $primary;
+    content: '';
+    position: absolute;
+    width: 80%;
+  }
+
+  .post-content {
+    margin-left: 10%;
+    padding-top: $header-height;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      line-height: $line-height;
+      margin-bottom: $distance * 2;
+    }
+
+    p {
+      width: 100%;
+    }
+  }
+
+  .hi-box {
+    z-index: 1;
+  }
+
+  .gray-box {
+    left: 40%;
+    margin-top: -$distance * 2;
+    position: relative;
+    transform: translateX(-50%);
+    z-index: 0;
+  }
+}
 // -----------------------------------------------------------------------------

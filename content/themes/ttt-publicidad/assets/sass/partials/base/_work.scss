@@ -5,78 +5,54 @@
 
 // Case Study box
 // -----------------------------------------------------------------------------
+.clients {
+  background-color: $primary;
+  max-width: calc(100% - #{$distance * 18});
+  padding: $distance * 3;
+  width: 100%;
+}
+
 .work-sample {
   @include inline-block;
-  background-position: center;
+  background-position: top center;
   background-repeat: no-repeat;
-  background-size: cover;
-  margin-left: $distance * 1.5;
+  background-size: calc((100vw - #{$distance * 24}) / 6);
+  color: $white;
+  height: calc((100vw - #{$distance * 24}) / 5);
   position: relative;
+  transition: all 150ms ease-out;
+  width: calc((100vw - #{$distance * 24}) / 3);
 
-  @include mq(hybrid) {
-    margin-left: auto;
+  &:hover {
+    background-color: $secondary;
+    background-position: bottom center;
+    color: $primary;
   }
 
-  &:nth-child(3n-2) {
-    margin-left: 0;
-
-    @include mq(hybrid) {
-      margin-left: auto;
-    }
+  &:nth-child(3n-1),
+  &:nth-child(3n) {
+    border-left: 1px solid $secondary;
   }
 
-  &:nth-child(2n) {
-    @include mq(desktop) {
-      margin-left: $distance * 1.5;
-    }
-
-    @include mq(hybrid) {
-      margin-left: auto;
-    }
-
-    @include mq(mobile) {
-      margin-left: $distance * 1.5;
-    }
-  }
-
-  &:nth-child(2n-1) {
-    @include mq(desktop) {
-      margin-left: 0;
-    }
-  }
-
-  > a > figure {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: $case-size;
-    max-height: #{($site-box - ($distance * 4)) / 4};
-    max-width: #{($site-box - ($distance * 4)) / 4};
-    width: $case-size;
-
-    @include mq(desktop) {
-      max-height: calc(((100vw - #{$distance * 4 + 300}) / 2) - #{$distance});
-      max-width: calc(((100vw - #{$distance * 4 + 300}) / 2) - #{$distance});
-    }
-
-    @include mq(hybrid) {
-      max-height: calc((100vw - #{$distance * 4 + 300}) - #{$distance});
-      max-width: calc((100vw - #{$distance * 4 + 300}) - #{$distance});
-    }
-
-    @include mq(mobile) {
-      height: $case-size-small;
-      max-height: none;
-      max-width: none;
-      width: $case-size-small;
-    }
-  }
-
-  > a > section {
-    background-color: $white;
+  &:nth-child(4n)::before {
+    border-top: 1px solid $secondary;
+    content: '';
     display: block;
-    margin-bottom: $distance;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 300%;
+  }
+
+  h5 {
+    @include vertical-center;
+    display: block;
+    text-align: center;
     width: 100%;
+
+    &:first-letter {
+      border-bottom: $border / 1.5 solid;
+    }
   }
 
   .post-title {
@@ -84,10 +60,6 @@
     height: $footer-height;
     line-height: $footer-height;
     text-align: center;
-
-    @include mq(mobile) {
-      font-size: $ftiny;
-    }
   }
 }
 // -----------------------------------------------------------------------------
