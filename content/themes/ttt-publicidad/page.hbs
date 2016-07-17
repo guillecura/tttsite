@@ -60,14 +60,17 @@
   </article>
 
   <section class="clients">
-    <article class="work-sample">
+    <article class="work-sample work-title">
       <h5>Clients</h5>
     </article>
     {{#get "posts" order="published_at asc" include="tags" as |client|}}
       {{#foreach client}}
         {{#has tag="client"}}
           <article class="work-sample" style="background-image: url('{{image}}');">
-            <span class="post-title">{{title}}</span>
+            <div>
+              <h3 class="title">{{title}}</h3>
+              <p class="description">{{content}}</p>
+            </div>
           </article>
         {{/has}}
       {{/foreach}}

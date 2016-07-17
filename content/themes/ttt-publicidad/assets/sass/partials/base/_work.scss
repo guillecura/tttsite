@@ -14,7 +14,7 @@
 
 .work-sample {
   @include inline-block;
-  background-position: top center;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: calc((100vw - #{$distance * 24}) / 6);
   color: $white;
@@ -23,15 +23,19 @@
   transition: all 150ms ease-out;
   width: calc((100vw - #{$distance * 24}) / 3);
 
-  &:hover {
+  &:not(.work-title):hover {
     background-color: $secondary;
-    background-position: bottom center;
+    background-size: 0;
     color: $primary;
+
+    > div {
+      opacity: 1;
+    }
   }
 
-  &:nth-child(3n-1),
-  &:nth-child(3n) {
-    border-left: 1px solid $secondary;
+  &:nth-child(3n-2),
+  &:nth-child(3n-1) {
+    border-right: 1px solid $secondary;
   }
 
   &:nth-child(4n)::before {
@@ -42,6 +46,13 @@
     position: absolute;
     top: 0;
     width: 300%;
+  }
+
+  > div {
+    @include vertical-center;
+    opacity: 0;
+    transform: all 150ms;
+    width: 100%;
   }
 
   h5 {
@@ -55,11 +66,15 @@
     }
   }
 
-  .post-title {
-    font-weight: $regular;
-    height: $footer-height;
-    line-height: $footer-height;
+  .title {
+    font-weight: $bold;
+  }
+
+  .title,
+  .description {
+    display: block;
     text-align: center;
+    width: 100%;
   }
 }
 // -----------------------------------------------------------------------------
