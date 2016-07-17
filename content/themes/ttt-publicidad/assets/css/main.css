@@ -91,6 +91,25 @@ body {
   .site-wrapper .content {
     width: 100%; }
 
+.menu-left,
+.menu-right {
+  animation: item-in .666s ease-out forwards;
+  bottom: 0;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 90px;
+  z-index: 10000; }
+
+.menu-left {
+  background-color: white;
+  border-right: 1px solid #f2ff15;
+  left: 0; }
+
+.menu-right {
+  background-color: #0d1d2b;
+  right: 0; }
+
 .hi-box {
   background-color: #0d1d2b;
   display: block;
@@ -319,10 +338,8 @@ body > nav {
     list-style: none; }
     body > nav li:hover a h2, body > nav li.nav-current a h2 {
       color: #f2ff15; }
-    body > nav li + li {
-      margin-left: 10px; }
     body > nav li > a {
-      display: inline-block;
+      display: block;
       margin-right: 0;
       padding-left: 1vw;
       padding-right: 10px; }
@@ -336,7 +353,8 @@ body > nav {
         body > nav li > a h2:first-letter {
           border-bottom: 2px solid; }
 
-.menu-icon {
+.menu-icon,
+.back-icon {
   background-image: url("../img/icon-menu_white.svg");
   background-position: center;
   background-repeat: no-repeat;
@@ -344,17 +362,21 @@ body > nav {
   color: #f2ff15;
   cursor: pointer;
   display: block;
+  font-size: 0;
   height: 26.66667px;
   position: fixed;
   right: 40px;
   top: 35px;
   width: 26.66667px;
   z-index: 9999; }
-  .menu-icon.nav-close {
+  .menu-icon.nav-close,
+  .back-icon.nav-close {
     background-image: url("../img/icon-menu_close.svg"); }
-  .menu-icon.icon-blue {
+  .menu-icon.icon-blue,
+  .back-icon.icon-blue {
     background-image: url("../img/icon-menu_blue.svg"); }
-  .menu-icon:focus {
+  .menu-icon:focus,
+  .back-icon:focus {
     outline: none; }
 
 .main-nav,
@@ -476,28 +498,26 @@ body > nav {
     margin: 20px 0; }
 
 .social-links {
-  list-style: none; }
-  .social-links > li {
-    display: inline-block;
-    font-size: 0;
-    height: 24px; }
-    @media (max-width: 640px) {
-      .social-links > li {
-        height: 19.2px;
-        width: 19.2px; } }
-    .social-links > li + li {
-      margin-left: 10px; }
+  bottom: 60px;
+  left: 0;
+  list-style: none;
+  position: absolute;
+  width: 100%; }
+  .social-links li {
+    padding-right: 20px;
+    width: 100%; }
+    .social-links li + li {
+      margin-top: 10px; }
   .social-links a {
     background-position: center;
     background-repeat: no-repeat;
     display: block;
     font-size: 0;
-    height: 100%;
-    padding-left: 29px;
+    height: 36px;
     transform-origin: center;
     transition: transform .1s ease-out;
     vertical-align: middle;
-    width: 100%; }
+    width: 36px; }
     .social-links a:hover {
       border: 0;
       transform: scale(0.9); }

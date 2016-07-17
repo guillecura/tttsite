@@ -1,0 +1,29 @@
+// =============================================================================
+// POST SIDE MENUS
+// =============================================================================
+
+
+// General
+// -----------------------------------------------------------------------------
+.menu-left,
+.menu-right {
+  animation: item-in .666s ease-out forwards; // Slide In animation
+  bottom: 0;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 90px;
+  z-index: $z-top;
+}
+
+.menu-left {
+  background-color: $white;
+  border-right: 1px solid $secondary;
+  left: 0;
+}
+
+.menu-right {
+  background-color: $primary;
+  right: 0;
+}
+// -----------------------------------------------------------------------------

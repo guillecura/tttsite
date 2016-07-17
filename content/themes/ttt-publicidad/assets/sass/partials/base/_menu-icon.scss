@@ -5,7 +5,8 @@
 
 // Icon styles
 // -----------------------------------------------------------------------------
-.menu-icon {
+.menu-icon,
+.back-icon {
   background-image: url('../img/icon-menu_white.svg');
   background-position: center;
   background-repeat: no-repeat;
@@ -13,6 +14,7 @@
   color: $secondary;
   cursor: pointer;
   display: block;
+  font-size: 0;
   height: $header-height / 3;
   position: fixed;
   right: $distance * 4;

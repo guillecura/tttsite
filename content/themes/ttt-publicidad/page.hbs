@@ -6,9 +6,17 @@
 {{!-- Everything inside the #post tags pulls data from the page --}}
 {{#post}}
 
-<header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
-  {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
-</header>
+<aside class="menu-left">
+</aside>
+
+<aside class="menu-right">
+  <a class="back-icon nav-close" href="{{@blog.url}}">Go back!</a>
+  <ul class="social-links">
+    <li><a href="mailto:" class="mail">email</a></li>
+    <li><a href="" class="facebook">facebook</a></li>
+    <li><a href="" class="instagram">instagram</a></li>
+  </ul>
+</aside>
 
 <main class="content" role="main">
     <article class="{{post_class}}">
