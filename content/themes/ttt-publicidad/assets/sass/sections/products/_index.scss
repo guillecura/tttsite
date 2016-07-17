@@ -1,187 +1,92 @@
 // =============================================================================
-// GALLERY PAGE STYLES
+// ABOUT PAGE STYLES
 // =============================================================================
 
 
 // General
 // -----------------------------------------------------------------------------
-.tag-template {
-  .content {
-    animation: op-in .999s ease-out forwards; // Opacity In animation
-    margin-bottom: $distance * 5;
-    min-height: calc(100vh - #{($header-height + $distance * 6) * 2 + $footer-height});
-    text-align: left;
-    width: $site-box;
+.page-template {
+  padding-top: $header-height / 2;
 
-    @include mq(desktop) {
-      padding: 0 $distance * 3;
-      width: 100%;
-    }
+  .post-title {
+    line-height: $line-height;
+    max-width: $post-box;
+    width: 66.66%;
 
-    @include mq(mobile) {
-      padding: 0 $distance;
+    &:first-letter {
+      border-bottom: $border / 1.5 solid;
     }
   }
 
-  .tag-head {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 33vh;
-    position: relative;
-    width: 100%;
+  p {
+    font-size: $fdef;
+    max-width: $post-box;
+    padding-left: $distance * 3;
+    width: 66.66%;
+  }
+}
+
+// Tag who
+.tag-who {
+  margin-bottom: $header-height;
+  max-width: calc(100% - #{$distance * 18});
+  position: relative;
+  width: 100%;
+
+  &::before {
+    border-top: $border / 1.5 solid $primary;
+    content: '';
+    position: absolute;
+    width: 80%;
   }
 
-  .tag-description {
-    animation: item-in .666s ease-out forwards; // Slide In animation
-    position: relative;
-    top: -5.5rem;
-    width: $site-box;
-
-    @include mq(desktop) {
-      padding: 0 $distance * 3;
-      width: 100%;
-    }
-
-    @include mq(hybrid) {
-      top: -$distance * 2;
-
-      h2 {
-        line-height: $line-height;
-        margin-bottom: $distance;
-      }
-    }
-
-    @include mq(mobile) {
-      padding: 0 $distance;
-    }
-
-    .hi-box {
-      @include inline-block;
-      margin-left: 0;
-      width: calc(50% - #{$distance});
-
-      @include mq(hybrid) {
-        width: 100%;
-      }
-    }
-
-    .brands {
-      @include inline-block;
-      margin-top: calc(5.5rem + #{$distance * 3});
-      margin-left: $distance;
-      text-align: right;
-      width: calc(50% - #{$distance});
-
-      @include mq(hybrid) {
-        display: none;
-      }
-
-      figure {
-        $size: (($site-box / 2) / 6) - $distance;
-
-        @include inline-block;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        height: $size;
-        margin-left: $distance / 2;
-        width: $size;
-
-        @include mq(desktop) {
-          width: calc((50vw - #{$distance * 3}) / 6 - #{$distance});
-        }
-
-        img {
-          height: 0;
-          width: 0;
-        }
-      }
-    }
+  .post-content {
+    margin-left: 10%;
+    padding-top: $header-height;
   }
-// -----------------------------------------------------------------------------
 
+  .box {
+    background-color: $secondary;
+    display: block;
+    height: calc((100vw - #{$distance * 18}) / 2);
+    margin-right: 0;
+    width: calc((100vw - #{$distance * 18}) / 1.5);
+  }
+}
 
-// Images
-// -----------------------------------------------------------------------------
-  .gallery-image {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: inline-block;
-    height: #{$site-box / 4 - $distance};
-    margin: 0;
-    margin-bottom: $distance;
-    margin-left: $distance / 2;
-    position: relative;
-    transition: all 250ms ease-out;
-    vertical-align: middle;
-    width: #{$site-box / 4 - $distance};
+// Tag what
+.tag-what {
+  max-width: calc(100% - #{$distance * 18});
+  padding-top: $header-height / 2;
+  position: relative;
+  width: 100%;
 
-    @include mq(desktop) {
-      height: calc((100vw - #{$distance * 8}) / 4 - #{$distance});
-      width: calc((100vw - #{$distance * 8}) / 4 - #{$distance});
-    }
+  &::before {
+    border-top: $border / 1.5 solid $primary;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 80%;
+  }
 
-    @include mq(hybrid) {
-      height: calc((100vw - #{$distance * 8}) / 3 - #{$distance});
-      width: calc((100vw - #{$distance * 8}) / 3 - #{$distance});
-    }
+  .post-content {
+    background-color: $primary;
+    color: $white;
+    margin-left: calc(10% - #{$distance * 6});
+    padding: $distance * 4 $distance * 6;
+    width: calc(80% + #{$distance * 12});
 
-    @include mq(mobile) {
-      height: calc(66vw - #{$distance * 5});
-      margin-bottom: calc(33vw - #{$distance * 3});
-      width: calc(100vw - #{$distance * 5});
-    }
-
-    &::after {
-      border: $border solid $white;
-      bottom: $distance / 2;
-      content: '';
-      height: calc(100% - #{$distance + $border * 2});
-      left: $distance / 2;
+    .post-image {
+      background-position: right;
+      background-repeat: no-repeat;
+      background-size: contain;
+      border-left: 1px solid $secondary;
+      min-height: 150px;
       position: absolute;
-      right: $distance / 2;
-      top: $distance / 2;
-      width: calc(100% - #{$distance + $border * 2});
-      z-index: 0;
-    }
-
-    &:hover {
-      &::after {
-        background-color: rgba($primary, .5);
-      }
-
-      > h5,
-      > p {
-        opacity: 1;
-      }
-    }
-
-    > h5 {
-      text-shadow: .066em .066em $primary;
-    }
-
-    > h5,
-    > p {
-      color: $white;
-      line-height: $line-height;
-      opacity: 0;
-      padding: $distance / 2 $distance $distance;
-      position: relative;
-      text-align: center;
-      top: $distance * 3;
-      transition: all 250ms ease-out;
-      width: calc(100% - #{$distance * 2});
-      z-index: 1;
-
-      @include mq(mobile) {
-        color: $secondary;
-        opacity: 1;
-        padding-bottom: 0;
-        padding-top: 0;
-        top: calc(66vw - #{$distance * 4.5});
-      }
+      right: $distance * 6;
+      top: $distance * 4;
+      width: 25%;
     }
   }
 }

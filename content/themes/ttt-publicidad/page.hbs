@@ -23,12 +23,32 @@
 </aside>
 
 <main class="content" role="main">
-    <article class="{{post_class}}">
+  <article class="{{post_class}}">
 
-        <section class="post-content">
-            {{content}}
-        </section>
+    {{#get "posts" order="published_at asc" include="tags" as |about|}}
+      {{#foreach about}}
+        {{#has tag="who"}}
+          <article class="{{post_class}}">
+            <section class="post-content">
+              <h5 class="post-title">{{title}}</h5>
+              <p>{{content}}</p>
+            </section>
 
-    </article>
+            <figure class="box"></figure>
+          </article>
+        {{/has}}
+
+        {{#has tag="what"}}
+          <article class="{{post_class}}">
+            <section class="post-content">
+              <h5 class="post-title">{{title}}</h5>
+              <p>{{content}}</p>
+              {{#if image}}<figure class="post-image" style="background-image: url('{{image}}')"></figure>{{/if}}
+            </section>
+          </article>
+        {{/has}}
+      {{/foreach}}
+    {{/get}}
+  </article>
 </main>
 {{/post}}

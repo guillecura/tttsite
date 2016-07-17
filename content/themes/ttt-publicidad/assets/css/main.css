@@ -198,7 +198,7 @@ body {
 .tag-template .post.tag-brands {
   border-left: 6px solid transparent;
   margin: 0;
-  max-width: 960px;
+  max-width: 640px;
   transition: all 150ms ease-out;
   width: 100%; }
   .tag-template .post.tag-brands:hover {
@@ -482,7 +482,7 @@ body > nav {
     margin-bottom: 50px; }
   .post-content > * {
     margin-left: 0;
-    max-width: 960px; }
+    max-width: 640px; }
     @media (max-width: 1044px) {
       .post-content > * {
         max-width: 100%; } }
@@ -654,147 +654,68 @@ h6 {
       .work-sample .post-title {
         font-size: 0.7rem; } }
 
-.tag-template .content {
-  animation: op-in .999s ease-out forwards;
-  margin-bottom: 50px;
-  min-height: calc(100vh - 310px);
-  text-align: left;
-  width: 1024px; }
-  @media (max-width: 1044px) {
-    .tag-template .content {
-      padding: 0 30px;
-      width: 100%; } }
-  @media (max-width: 640px) {
-    .tag-template .content {
-      padding: 0 10px; } }
+.page-template {
+  padding-top: 40px; }
+  .page-template .post-title {
+    line-height: 1.11em;
+    max-width: 640px;
+    width: 66.66%; }
+    .page-template .post-title:first-letter {
+      border-bottom: 2px solid; }
+  .page-template p {
+    font-size: 1rem;
+    max-width: 640px;
+    padding-left: 30px;
+    width: 66.66%; }
 
-.tag-template .tag-head {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 33vh;
+.tag-who {
+  margin-bottom: 80px;
+  max-width: calc(100% - 180px);
   position: relative;
   width: 100%; }
+  .tag-who::before {
+    border-top: 2px solid #0d1d2b;
+    content: '';
+    position: absolute;
+    width: 80%; }
+  .tag-who .post-content {
+    margin-left: 10%;
+    padding-top: 80px; }
+  .tag-who .box {
+    background-color: #f2ff15;
+    display: block;
+    height: calc((100vw - 180px) / 2);
+    margin-right: 0;
+    width: calc((100vw - 180px) / 1.5); }
 
-.tag-template .tag-description {
-  animation: item-in .666s ease-out forwards;
+.tag-what {
+  max-width: calc(100% - 180px);
+  padding-top: 40px;
   position: relative;
-  top: -5.5rem;
-  width: 1024px; }
-  @media (max-width: 1044px) {
-    .tag-template .tag-description {
-      padding: 0 30px;
-      width: 100%; } }
-  @media (max-width: 854px) {
-    .tag-template .tag-description {
-      top: -20px; }
-      .tag-template .tag-description h2 {
-        line-height: 1.11em;
-        margin-bottom: 10px; } }
-  @media (max-width: 640px) {
-    .tag-template .tag-description {
-      padding: 0 10px; } }
-  .tag-template .tag-description .hi-box {
-    display: inline-block;
-    margin-right: -5px;
-    vertical-align: top;
-    margin-left: 0;
-    width: calc(50% - 10px); }
-    @media (max-width: 854px) {
-      .tag-template .tag-description .hi-box {
-        width: 100%; } }
-  .tag-template .tag-description .brands {
-    display: inline-block;
-    margin-right: -5px;
-    vertical-align: top;
-    margin-top: calc(5.5rem + 30px);
-    margin-left: 10px;
-    text-align: right;
-    width: calc(50% - 10px); }
-    @media (max-width: 854px) {
-      .tag-template .tag-description .brands {
-        display: none; } }
-    .tag-template .tag-description .brands figure {
-      display: inline-block;
-      margin-right: -5px;
-      vertical-align: top;
-      background-position: center;
+  width: 100%; }
+  .tag-what::before {
+    border-top: 2px solid #0d1d2b;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 80%; }
+  .tag-what .post-content {
+    background-color: #0d1d2b;
+    color: white;
+    margin-left: calc(10% - 60px);
+    padding: 40px 60px;
+    width: calc(80% + 120px); }
+    .tag-what .post-content .post-image {
+      background-position: right;
       background-repeat: no-repeat;
       background-size: contain;
-      height: 75.33333px;
-      margin-left: 5px;
-      width: 75.33333px; }
-      @media (max-width: 1044px) {
-        .tag-template .tag-description .brands figure {
-          width: calc((50vw - 30px) / 6 - 10px); } }
-      .tag-template .tag-description .brands figure img {
-        height: 0;
-        width: 0; }
-
-.tag-template .gallery-image {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: inline-block;
-  height: 246px;
-  margin: 0;
-  margin-bottom: 10px;
-  margin-left: 5px;
-  position: relative;
-  transition: all 250ms ease-out;
-  vertical-align: middle;
-  width: 246px; }
-  @media (max-width: 1044px) {
-    .tag-template .gallery-image {
-      height: calc((100vw - 80px) / 4 - 10px);
-      width: calc((100vw - 80px) / 4 - 10px); } }
-  @media (max-width: 854px) {
-    .tag-template .gallery-image {
-      height: calc((100vw - 80px) / 3 - 10px);
-      width: calc((100vw - 80px) / 3 - 10px); } }
-  @media (max-width: 640px) {
-    .tag-template .gallery-image {
-      height: calc(66vw - 50px);
-      margin-bottom: calc(33vw - 30px);
-      width: calc(100vw - 50px); } }
-  .tag-template .gallery-image::after {
-    border: 3px solid white;
-    bottom: 5px;
-    content: '';
-    height: calc(100% - 16px);
-    left: 5px;
-    position: absolute;
-    right: 5px;
-    top: 5px;
-    width: calc(100% - 16px);
-    z-index: 0; }
-  .tag-template .gallery-image:hover::after {
-    background-color: rgba(13, 29, 43, 0.5); }
-  .tag-template .gallery-image:hover > h5,
-  .tag-template .gallery-image:hover > p {
-    opacity: 1; }
-  .tag-template .gallery-image > h5 {
-    text-shadow: 0.066em 0.066em #0d1d2b; }
-  .tag-template .gallery-image > h5,
-  .tag-template .gallery-image > p {
-    color: white;
-    line-height: 1.11em;
-    opacity: 0;
-    padding: 5px 10px 10px;
-    position: relative;
-    text-align: center;
-    top: 30px;
-    transition: all 250ms ease-out;
-    width: calc(100% - 20px);
-    z-index: 1; }
-    @media (max-width: 640px) {
-      .tag-template .gallery-image > h5,
-      .tag-template .gallery-image > p {
-        color: #f2ff15;
-        opacity: 1;
-        padding-bottom: 0;
-        padding-top: 0;
-        top: calc(66vw - 45px); } }
+      border-left: 1px solid #f2ff15;
+      min-height: 150px;
+      position: absolute;
+      right: 60px;
+      top: 40px;
+      width: 25%; }
 
 .home-template .content {
   background-color: white;
