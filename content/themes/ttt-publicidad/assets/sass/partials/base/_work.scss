@@ -9,7 +9,17 @@
   background-color: $primary;
   max-width: calc(100% - #{$distance * 18});
   padding: $distance * 3;
+  position: relative;
   width: 100%;
+
+  &::before {
+    border-top: $border / 1.5 solid $primary;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -$distance * 6;
+    width: 80%;
+  }
 }
 
 .work-sample {

@@ -630,7 +630,15 @@ h6 {
   background-color: #0d1d2b;
   max-width: calc(100% - 180px);
   padding: 30px;
+  position: relative;
   width: 100%; }
+  .clients::before {
+    border-top: 2px solid #0d1d2b;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -60px;
+    width: 80%; }
 
 .work-sample {
   display: inline-block;
@@ -748,7 +756,7 @@ h6 {
       width: 25%; }
 
 .tag-product {
-  margin-bottom: 80px;
+  margin-bottom: 100px;
   margin-top: 40px;
   max-width: calc(100% - 180px);
   position: relative;

@@ -92,7 +92,7 @@
 
 // Tag product
 .tag-product {
-  margin-bottom: $header-height;
+  margin-bottom: $header-height * 1.25;
   margin-top: $header-height / 2;
   max-width: calc(100% - #{$distance * 18});
   position: relative;
