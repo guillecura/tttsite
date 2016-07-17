@@ -42,6 +42,15 @@ body {
   &.nav-opened {
     overflow: hidden;
   }
+
+  &.left-nav-opened {
+    left: 25vw;
+    overflow: hidden;
+
+    .menu-left {
+      left: 25vw;
+    }
+  }
 }
 // -----------------------------------------------------------------------------
 

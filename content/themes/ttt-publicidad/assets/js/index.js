@@ -40,9 +40,11 @@
 
     // Menu & menu button animation
     var $btn = $(".menu-icon");
+    var $btnalt = $(".menu-icon-left");
     var $btnNav = $("body > nav > ul a");
     var $body = $("body");
-    var $nav = $("body > nav");
+    var $nav = $("body > .nav");
+    var $navalt = $("body > .left-nav");
 
     $(window).scroll(function() {
       var scroll = $(window).scrollTop();
@@ -66,6 +68,19 @@
         $(this).removeClass("nav-close");
         $body.toggleClass("nav-opened nav-closed");
         $nav.removeClass("opened");
+      }
+    });
+
+    $btnalt.on("click tap", function(e){
+      e.preventDefault();
+      if ($body.hasClass("left-nav-closed")) {
+        $(this).addClass("nav-close");
+        $body.toggleClass("left-nav-opened left-nav-closed");
+        $navalt.addClass("opened");
+      } else {
+        $(this).removeClass("nav-close");
+        $body.toggleClass("left-nav-opened left-nav-closed");
+        $navalt.removeClass("opened");
       }
     });
   });

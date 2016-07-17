@@ -20,6 +20,7 @@
   background-color: $white;
   border-right: 1px solid $secondary;
   left: 0;
+  transition: left 300ms ease-out;
 
   .icon-logo,
   .icon-name {
