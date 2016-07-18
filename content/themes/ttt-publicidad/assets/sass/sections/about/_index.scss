@@ -144,6 +144,7 @@
   width: 100%;
 
   @include mq(mobile) {
+    margin-bottom: $header-height * .75;
     margin-left: $distance * 6;
     max-width: calc(100% - #{$distance * 9});
   }
@@ -211,6 +212,13 @@
   position: relative;
   width: calc(80% + #{$distance * 12});
 
+  @include mq(mobile) {
+    margin-left: $distance * 6;
+    padding: 0;
+    padding-left: $distance;
+    width: calc(100% - #{$distance * 9});
+  }
+
   .post-content,
   .post-image {
     @include inline-block;
@@ -221,15 +229,32 @@
     height: 80vw * .25;
     width: 80vw * .25;
 
+    @include mq(mobile) {
+      bottom: -$distance;
+      height: 25vw;
+      margin-bottom: 0;
+      position: absolute;
+      right: 0;
+      width: 50%;
+    }
+
     > div {
       bottom: $distance * 2;
       position: absolute;
       right: $distance;
       width: calc(100% - #{$distance * 2});
 
+      @include mq(mobile) {
+        width: 100%;
+      }
+
       * {
         float: right;
         font-size: $fsmall;
+
+        @include mq(mobile) {
+          font-size: $ftiny * .8;
+        }
       }
     }
   }
@@ -240,6 +265,11 @@
     background-size: cover;
     height: 80vw * .25;
     width: 80vw * .75;
+
+    @include mq(mobile) {
+      height: 40vw;
+      width: 100%;
+    }
   }
 }
 // -----------------------------------------------------------------------------

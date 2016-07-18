@@ -263,7 +263,6 @@ body {
     @media (max-width: 640px) {
       .site-footer .copyright {
         font-size: 3.5vw;
-        margin: 10px auto 0;
         position: static; } }
 
 .hero-section {
@@ -605,6 +604,11 @@ h6 {
   padding: 30px;
   position: relative;
   width: 100%; }
+  @media (max-width: 640px) {
+    .clients {
+      margin-left: 60px;
+      max-width: calc(100% - 90px);
+      padding: 10px; } }
   .clients::before {
     border-top: 2px solid #0d1d2b;
     content: '';
@@ -612,6 +616,9 @@ h6 {
     right: 0;
     top: -60px;
     width: 80%; }
+    @media (max-width: 640px) {
+      .clients::before {
+        top: -40px; } }
 
 .work-sample {
   display: inline-block;
@@ -625,6 +632,11 @@ h6 {
   position: relative;
   transition: all 150ms ease-out;
   width: calc((100vw - 240px) / 3); }
+  @media (max-width: 640px) {
+    .work-sample {
+      background-size: calc((100vw - 110px) * .5);
+      height: calc((100vw - 110px) * .66);
+      width: calc(100vw - 110px); } }
   .work-sample:not(.work-title):hover {
     background-color: #f2ff15;
     background-size: 0;
@@ -633,6 +645,9 @@ h6 {
       opacity: 1; }
   .work-sample:nth-child(3n-2), .work-sample:nth-child(3n-1) {
     border-right: 1px solid #f2ff15; }
+    @media (max-width: 640px) {
+      .work-sample:nth-child(3n-2), .work-sample:nth-child(3n-1) {
+        border-right: 0; } }
   .work-sample:nth-child(4n)::before {
     border-top: 1px solid #f2ff15;
     content: '';
@@ -641,6 +656,12 @@ h6 {
     position: absolute;
     top: 0;
     width: 300%; }
+    @media (max-width: 640px) {
+      .work-sample:nth-child(4n)::before {
+        display: none; } }
+  @media (max-width: 640px) {
+    .work-sample + .work-sample {
+      border-top: 1px solid #f2ff15; } }
   .work-sample > div {
     position: absolute;
     top: 50%;
@@ -648,6 +669,9 @@ h6 {
     opacity: 0;
     transform: all 150ms;
     width: 100%; }
+    .work-sample > div > p {
+      padding: 0;
+      text-align: center; }
   .work-sample h5 {
     position: absolute;
     top: 50%;
@@ -658,10 +682,8 @@ h6 {
     .work-sample h5:first-letter {
       border-bottom: 2px solid; }
   .work-sample .title {
-    font-weight: 700; }
-  .work-sample .title,
-  .work-sample .description {
     display: block;
+    font-weight: 700;
     text-align: center;
     width: 100%; }
 
@@ -773,6 +795,7 @@ h6 {
   width: 100%; }
   @media (max-width: 640px) {
     .tag-product {
+      margin-bottom: 60px;
       margin-left: 60px;
       max-width: calc(100% - 90px); } }
   .tag-product::before {
@@ -822,6 +845,12 @@ h6 {
   padding: 40px 60px;
   position: relative;
   width: calc(80% + 120px); }
+  @media (max-width: 640px) {
+    .tag-example {
+      margin-left: 60px;
+      padding: 0;
+      padding-left: 10px;
+      width: calc(100% - 90px); } }
   .tag-example .post-content,
   .tag-example .post-image {
     display: inline-block;
@@ -831,20 +860,38 @@ h6 {
     background-color: #f2ff15;
     height: 20vw;
     width: 20vw; }
+    @media (max-width: 640px) {
+      .tag-example .post-content {
+        bottom: -10px;
+        height: 25vw;
+        margin-bottom: 0;
+        position: absolute;
+        right: 0;
+        width: 50%; } }
     .tag-example .post-content > div {
       bottom: 20px;
       position: absolute;
       right: 10px;
       width: calc(100% - 20px); }
+      @media (max-width: 640px) {
+        .tag-example .post-content > div {
+          width: 100%; } }
       .tag-example .post-content > div * {
         float: right;
         font-size: 0.85rem; }
+        @media (max-width: 640px) {
+          .tag-example .post-content > div * {
+            font-size: 0.56rem; } }
   .tag-example .post-image {
     background-position: right;
     background-repeat: no-repeat;
     background-size: cover;
     height: 20vw;
     width: 60vw; }
+    @media (max-width: 640px) {
+      .tag-example .post-image {
+        height: 40vw;
+        width: 100%; } }
 
 .home-template .content {
   background-color: white;

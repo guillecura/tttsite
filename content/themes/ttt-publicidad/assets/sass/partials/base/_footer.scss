@@ -37,7 +37,6 @@
 
     @include mq(mobile) {
       font-size: 3.5vw;
-      margin: $distance auto 0;
       position: static;
     }
   }
