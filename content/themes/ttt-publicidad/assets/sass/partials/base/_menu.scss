@@ -92,7 +92,7 @@ body > .left-nav {
 
 // Main content
 // -----------------------------------------------------------------------------
-  > ul {
+  > .nav > ul {
     @include vertical-center;
     right: $distance * 3;
   }
@@ -118,8 +118,8 @@ body > .left-nav {
 
       h2 {
         color: $primary;
-        font-size: 2vw;
-        font-weight: $regular;
+        font-size: 1.33vw;
+        font-weight: $medium;
         line-height: $line-height * 2;
         position: relative;
         transition: all 150ms ease-out;

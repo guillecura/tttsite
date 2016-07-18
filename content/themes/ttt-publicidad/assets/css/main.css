@@ -382,7 +382,7 @@ body > .left-nav {
   body > .left-nav.opened {
     pointer-events: all;
     width: 25vw; }
-  body > .left-nav > ul {
+  body > .left-nav > .nav > ul {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -399,8 +399,8 @@ body > .left-nav {
       padding-right: 10px; }
       body > .left-nav li > a h2 {
         color: #0d1d2b;
-        font-size: 2vw;
-        font-weight: 400;
+        font-size: 1.33vw;
+        font-weight: 500;
         line-height: 2.22em;
         position: relative;
         transition: all 150ms ease-out; }
