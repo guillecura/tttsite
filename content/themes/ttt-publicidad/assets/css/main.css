@@ -283,7 +283,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   height: calc(100vh - 30px);
-  max-width: calc(100% - 60px);
+  max-width: calc(100% - 50px);
   position: relative;
   width: 100%;
   z-index: 3; }
@@ -390,7 +390,7 @@ body > .left-nav {
   body > .left-nav li {
     display: block;
     list-style: none; }
-    body > .left-nav li:hover a h2, body > .left-nav li.nav-current a h2 {
+    body > .left-nav li:hover a h2 {
       text-shadow: 0.08em 0.08em #f2ff15; }
     body > .left-nav li > a {
       display: block;
@@ -822,6 +822,7 @@ h6 {
 .home-template .content {
   background-color: white;
   padding: 30px;
+  padding-left: 20px;
   position: relative;
   z-index: 3; }
   .home-template .content .white-box {
@@ -874,6 +875,7 @@ h6 {
   background-color: #0d1d2b; }
   .home-template::after {
     border: 30px solid white;
+    border-left: 20px solid white;
     border-bottom: 0;
     content: '';
     height: calc(100% - 30px);
@@ -882,5 +884,5 @@ h6 {
     position: fixed;
     right: 0;
     top: 0;
-    width: calc(100% - 60px);
+    width: calc(100% - 50px);
     z-index: 2; }

@@ -8,6 +8,7 @@
 .home-template .content {
   background-color: $white;
   padding: $distance * 3;
+  padding-left: $distance * 2;
   position: relative;
   z-index: 3;
 
@@ -84,6 +85,7 @@
 
   &::after {
     border: $distance * 3 solid $white;
+    border-left: $distance * 2 solid $white;
     border-bottom: 0;
     content: '';
     height: calc(100% - #{$distance * 3});
@@ -92,7 +94,7 @@
     position: fixed;
     right: 0;
     top: 0;
-    width: calc(100% - #{$distance * 6});
+    width: calc(100% - #{$distance * 5});
     z-index: 2;
   }
 }

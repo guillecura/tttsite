@@ -6,7 +6,7 @@
 {{!-- Everything inside the #post tags pulls data from the page --}}
 {{#post}}
 <div class="left-nav">
-  {{navigation}}
+  {{>navigationalt}}
 </div>
 
 <aside class="menu-left">
@@ -30,7 +30,7 @@
     {{#get "posts" order="published_at asc" include="tags" as |about|}}
       {{#foreach about}}
         {{#has tag="who"}}
-          <article class="{{post_class}}" id="{{slug}}">
+          <article class="{{post_class}}" id="sobre-nosotros">
             <section class="post-content">
               <h5 class="post-title">{{title}}</h5>
               <p>{{content}}</p>
@@ -72,7 +72,7 @@
     {{/get}}
   </article>
 
-  <section class="clients">
+  <section class="clients" id="clientes">
     <article class="work-sample work-title">
       <h5>Clients</h5>
     </article>

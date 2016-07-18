@@ -103,8 +103,7 @@ body > .left-nav {
     display: block;
     list-style: none;
 
-    &:hover,
-    &.nav-current {
+    &:hover {
       a h2 {
         text-shadow: .08em .08em $secondary;
       }

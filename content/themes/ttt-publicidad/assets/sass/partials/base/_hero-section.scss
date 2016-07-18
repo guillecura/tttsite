@@ -10,7 +10,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: calc(#{$site-height} - #{$distance * 3});
-  max-width: calc(100% - #{$distance * 6});
+  max-width: calc(100% - #{$distance * 5});
   position: relative;
   width: 100%;
   z-index: 3;
