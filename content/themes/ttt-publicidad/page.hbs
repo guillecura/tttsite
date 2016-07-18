@@ -55,6 +55,17 @@
             </section>
           </article>
         {{/has}}
+
+        {{#has tag="example"}}
+          <article class="{{post_class}}" id="{{slug}}">
+            <section class="post-content">
+              <div>
+                {{content}}
+              </div>
+            </section>
+            <figure class="post-image" style="background-image: url('{{image}}');"></figure>
+          </article>
+        {{/has}}
       {{/foreach}}
     {{/get}}
   </article>

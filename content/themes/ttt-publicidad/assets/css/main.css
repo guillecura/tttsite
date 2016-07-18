@@ -788,6 +788,37 @@ h6 {
     transform: translateX(-50%);
     z-index: 0; }
 
+.tag-example {
+  margin-bottom: 100px;
+  margin-top: 40px;
+  margin-left: calc(10% - 60px);
+  padding: 40px 60px;
+  position: relative;
+  width: calc(80% + 120px); }
+  .tag-example .post-content,
+  .tag-example .post-image {
+    display: inline-block;
+    margin-right: -5px;
+    vertical-align: top; }
+  .tag-example .post-content {
+    background-color: #f2ff15;
+    height: 20vw;
+    width: 20vw; }
+    .tag-example .post-content > div {
+      bottom: 20px;
+      position: absolute;
+      right: 10px;
+      width: calc(100% - 20px); }
+      .tag-example .post-content > div * {
+        float: right;
+        font-size: 0.85rem; }
+  .tag-example .post-image {
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 20vw;
+    width: 60vw; }
+
 .home-template .content {
   background-color: white;
   padding: 30px;

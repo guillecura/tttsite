@@ -136,4 +136,44 @@
     z-index: 0;
   }
 }
+
+.tag-example {
+  margin-bottom: $header-height * 1.25;
+  margin-top: $header-height / 2;
+  margin-left: calc(10% - #{$distance * 6});
+  padding: $distance * 4 $distance * 6;
+  position: relative;
+  width: calc(80% + #{$distance * 12});
+
+  .post-content,
+  .post-image {
+    @include inline-block;
+  }
+
+  .post-content {
+    background-color: $secondary;
+    height: 80vw * .25;
+    width: 80vw * .25;
+
+    > div {
+      bottom: $distance * 2;
+      position: absolute;
+      right: $distance;
+      width: calc(100% - #{$distance * 2});
+
+      * {
+        float: right;
+        font-size: $fsmall;
+      }
+    }
+  }
+
+  .post-image {
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vw * .25;
+    width: 80vw * .75;
+  }
+}
 // -----------------------------------------------------------------------------
