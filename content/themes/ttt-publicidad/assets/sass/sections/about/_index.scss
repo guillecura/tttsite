@@ -11,6 +11,10 @@
     max-width: $post-box;
     width: 66.66%;
 
+    @include mq(mobile) {
+      width: calc(100% - #{$distance * 2});
+    }
+
     &:first-letter {
       border-bottom: $border / 1.5 solid;
     }
@@ -21,6 +25,12 @@
     max-width: $post-box;
     padding-left: $distance * 3;
     width: 66.66%;
+
+    @include mq(mobile) {
+      font-size: $fsmall;
+      padding-left: $distance;
+      width: calc(100% - #{$distance * 2});
+    }
   }
 }
 
@@ -32,6 +42,12 @@
   position: relative;
   width: 100%;
 
+  @include mq(mobile) {
+    margin-bottom: $header-height * .75;
+    margin-left: $distance * 6;
+    max-width: calc(100% - #{$distance * 9});
+  }
+
   &::before {
     border-top: $border / 1.5 solid $primary;
     content: '';
@@ -42,6 +58,11 @@
   .post-content {
     margin-left: 10%;
     padding-top: $header-height;
+
+    @include mq(mobile) {
+      margin-left: $distance * 3;
+      padding-top: $header-height / 1.5;
+    }
   }
 
   .box {
@@ -50,6 +71,11 @@
     height: calc((100vw - #{$distance * 18}) / 2);
     margin-right: 0;
     width: calc((100vw - #{$distance * 18}) / 1.5);
+
+    @include mq(mobile) {
+      height: calc((100vw - #{$distance * 9}) / 1.5);
+      width: calc(100% - #{$distance});
+    }
   }
 }
 
@@ -59,6 +85,11 @@
   padding-top: $header-height / 2;
   position: relative;
   width: 100%;
+
+  @include mq(mobile) {
+    margin-left: $distance * 6;
+    max-width: calc(100% - #{$distance * 9});
+  }
 
   &::before {
     border-top: $border / 1.5 solid $primary;
@@ -76,6 +107,12 @@
     padding: $distance * 4 $distance * 6;
     width: calc(80% + #{$distance * 12});
 
+    @include mq(mobile) {
+      margin-left: $distance;
+      padding: $distance * 2;
+      width: calc(100% - #{$distance * 2});
+    }
+
     .post-image {
       background-position: right;
       background-repeat: no-repeat;
@@ -86,6 +123,14 @@
       right: $distance * 6;
       top: $distance * 4;
       width: 25%;
+
+      @include mq(mobile) {
+        background-position: bottom center;
+        border-left: 0;
+        border-top: 1px solid $secondary;
+        position: static;
+        width: 100%;
+      }
     }
   }
 }
@@ -98,6 +143,11 @@
   position: relative;
   width: 100%;
 
+  @include mq(mobile) {
+    margin-left: $distance * 6;
+    max-width: calc(100% - #{$distance * 9});
+  }
+
   &::before {
     border-top: $border / 1.5 solid $primary;
     content: '';
@@ -108,6 +158,11 @@
   .post-content {
     margin-left: 10%;
     padding-top: $header-height;
+
+    @include mq(mobile) {
+      margin-left: 0;
+      padding-top: $header-height / 2;
+    }
 
     h1,
     h2,
@@ -126,6 +181,11 @@
 
   .hi-box {
     z-index: 1;
+
+    @include mq(mobile) {
+      margin-left: $distance;
+      width: calc(100% - #{$distance * 2});
+    }
   }
 
   .gray-box {
@@ -134,6 +194,12 @@
     position: relative;
     transform: translateX(-50%);
     z-index: 0;
+
+    @include mq(mobile) {
+      left: $distance * 2;
+      transform: none;
+      width: calc(100% - #{$distance * 2});
+    }
   }
 }
 

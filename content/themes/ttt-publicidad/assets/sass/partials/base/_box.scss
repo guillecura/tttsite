@@ -11,6 +11,10 @@
   padding: $distance * 3 $distance * 4;
   position: relative;
 
+  @include mq(mobile) {
+    padding: $distance * 2 $distance * 3;
+  }
+
   &::before {
     border: $border solid $primary;
     content: '';
@@ -54,6 +58,10 @@
   position: relative;
   text-align: center;
 
+  @include mq(mobile) {
+    padding: $distance * 6 $distance * 3 $distance * 6 $distance;
+  }
+
   &::after,
   &::before {
     content: '•';
@@ -62,14 +70,26 @@
     position: absolute;
     text-align: center;
     transform: translateX(-50%);
+
+    @include mq(mobile) {
+      left: calc(50% - #{$distance});
+    }
   }
 
   &::before {
     top: $distance * 6;
+
+    @include mq(mobile) {
+      top: $distance * 3;
+    }
   }
 
   &::after {
     bottom: $distance * 6;
+
+    @include mq(mobile) {
+      bottom: $distance * 3;
+    }
   }
 
   * {

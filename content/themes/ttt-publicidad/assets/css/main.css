@@ -157,6 +157,9 @@ body {
   display: block;
   padding: 30px 40px;
   position: relative; }
+  @media (max-width: 640px) {
+    .hi-box {
+      padding: 20px 30px; } }
   .hi-box::before {
     border: 3px solid #0d1d2b;
     content: '';
@@ -193,6 +196,9 @@ body {
   padding: 100px 40px;
   position: relative;
   text-align: center; }
+  @media (max-width: 640px) {
+    .gray-box {
+      padding: 60px 30px 60px 10px; } }
   .gray-box::after, .gray-box::before {
     content: '•';
     font-size: 2rem;
@@ -200,10 +206,19 @@ body {
     position: absolute;
     text-align: center;
     transform: translateX(-50%); }
+    @media (max-width: 640px) {
+      .gray-box::after, .gray-box::before {
+        left: calc(50% - 10px); } }
   .gray-box::before {
     top: 60px; }
+    @media (max-width: 640px) {
+      .gray-box::before {
+        top: 30px; } }
   .gray-box::after {
     bottom: 60px; }
+    @media (max-width: 640px) {
+      .gray-box::after {
+        bottom: 30px; } }
   .gray-box * {
     color: #0d1d2b;
     width: 100%; }
@@ -654,6 +669,9 @@ h6 {
   line-height: 1.11em;
   max-width: 640px;
   width: 66.66%; }
+  @media (max-width: 640px) {
+    .page-template .post-title {
+      width: calc(100% - 20px); } }
   .page-template .post-title:first-letter {
     border-bottom: 2px solid; }
 
@@ -662,6 +680,11 @@ h6 {
   max-width: 640px;
   padding-left: 30px;
   width: 66.66%; }
+  @media (max-width: 640px) {
+    .page-template p {
+      font-size: 0.85rem;
+      padding-left: 10px;
+      width: calc(100% - 20px); } }
 
 .tag-who {
   margin-bottom: 80px;
@@ -669,6 +692,11 @@ h6 {
   max-width: calc(100% - 180px);
   position: relative;
   width: 100%; }
+  @media (max-width: 640px) {
+    .tag-who {
+      margin-bottom: 60px;
+      margin-left: 60px;
+      max-width: calc(100% - 90px); } }
   .tag-who::before {
     border-top: 2px solid #0d1d2b;
     content: '';
@@ -677,18 +705,30 @@ h6 {
   .tag-who .post-content {
     margin-left: 10%;
     padding-top: 80px; }
+    @media (max-width: 640px) {
+      .tag-who .post-content {
+        margin-left: 30px;
+        padding-top: 53.33333px; } }
   .tag-who .box {
     background-color: #f2ff15;
     display: block;
     height: calc((100vw - 180px) / 2);
     margin-right: 0;
     width: calc((100vw - 180px) / 1.5); }
+    @media (max-width: 640px) {
+      .tag-who .box {
+        height: calc((100vw - 90px) / 1.5);
+        width: calc(100% - 10px); } }
 
 .tag-what {
   max-width: calc(100% - 180px);
   padding-top: 40px;
   position: relative;
   width: 100%; }
+  @media (max-width: 640px) {
+    .tag-what {
+      margin-left: 60px;
+      max-width: calc(100% - 90px); } }
   .tag-what::before {
     border-top: 2px solid #0d1d2b;
     content: '';
@@ -702,6 +742,11 @@ h6 {
     margin-left: calc(10% - 60px);
     padding: 40px 60px;
     width: calc(80% + 120px); }
+    @media (max-width: 640px) {
+      .tag-what .post-content {
+        margin-left: 10px;
+        padding: 20px;
+        width: calc(100% - 20px); } }
     .tag-what .post-content .post-image {
       background-position: right;
       background-repeat: no-repeat;
@@ -712,6 +757,13 @@ h6 {
       right: 60px;
       top: 40px;
       width: 25%; }
+      @media (max-width: 640px) {
+        .tag-what .post-content .post-image {
+          background-position: bottom center;
+          border-left: 0;
+          border-top: 1px solid #f2ff15;
+          position: static;
+          width: 100%; } }
 
 .tag-product {
   margin-bottom: 100px;
@@ -719,6 +771,10 @@ h6 {
   max-width: calc(100% - 180px);
   position: relative;
   width: 100%; }
+  @media (max-width: 640px) {
+    .tag-product {
+      margin-left: 60px;
+      max-width: calc(100% - 90px); } }
   .tag-product::before {
     border-top: 2px solid #0d1d2b;
     content: '';
@@ -727,6 +783,10 @@ h6 {
   .tag-product .post-content {
     margin-left: 10%;
     padding-top: 80px; }
+    @media (max-width: 640px) {
+      .tag-product .post-content {
+        margin-left: 0;
+        padding-top: 40px; } }
     .tag-product .post-content h1,
     .tag-product .post-content h2,
     .tag-product .post-content h3,
@@ -739,12 +799,21 @@ h6 {
       width: 100%; }
   .tag-product .hi-box {
     z-index: 1; }
+    @media (max-width: 640px) {
+      .tag-product .hi-box {
+        margin-left: 10px;
+        width: calc(100% - 20px); } }
   .tag-product .gray-box {
     left: 40%;
     margin-top: -20px;
     position: relative;
     transform: translateX(-50%);
     z-index: 0; }
+    @media (max-width: 640px) {
+      .tag-product .gray-box {
+        left: 20px;
+        transform: none;
+        width: calc(100% - 20px); } }
 
 .tag-example {
   margin-bottom: 100px;
