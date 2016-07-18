@@ -90,8 +90,14 @@ body {
   body.left-nav-opened {
     left: 25vw;
     overflow: hidden; }
+    @media (max-width: 640px) {
+      body.left-nav-opened {
+        left: 66.66vw; } }
     body.left-nav-opened .menu-left {
       left: 25vw; }
+      @media (max-width: 640px) {
+        body.left-nav-opened .menu-left {
+          left: 66.66vw; } }
 
 .site-wrapper {
   min-height: calc(100vh - 50px);
@@ -115,6 +121,9 @@ body {
   border-right: 1px solid #f2ff15;
   left: 0;
   transition: left 300ms ease-out; }
+  @media (max-width: 640px) {
+    .menu-left {
+      width: 60px; } }
   .menu-left .icon-logo,
   .menu-left .icon-name {
     background-position: center;
@@ -132,10 +141,16 @@ body {
     background-image: url("../img/logo-name_blue.svg");
     bottom: 40px;
     height: 60px; }
+    @media (max-width: 640px) {
+      .menu-left .icon-name {
+        display: none; } }
 
 .menu-right {
   background-color: #0d1d2b;
   right: 0; }
+  @media (max-width: 640px) {
+    .menu-right {
+      width: 30px; } }
 
 .hi-box {
   background-color: #f2ff15;
@@ -365,6 +380,9 @@ body > .left-nav {
   body > .left-nav.opened {
     pointer-events: all;
     width: 25vw; }
+    @media (max-width: 640px) {
+      body > .left-nav.opened {
+        width: 66.66vw; } }
     body > .left-nav.opened li {
       animation: item-in .666s 150ms ease-out forwards; }
   body > .left-nav > .nav > ul {
@@ -372,6 +390,9 @@ body > .left-nav {
     top: 50%;
     transform: translateY(-50%);
     right: 30px; }
+    @media (max-width: 640px) {
+      body > .left-nav > .nav > ul {
+        right: 20px; } }
   body > .left-nav li {
     display: block;
     list-style: none;
@@ -390,6 +411,9 @@ body > .left-nav {
         line-height: 2.22em;
         position: relative;
         transition: all 150ms ease-out; }
+        @media (max-width: 640px) {
+          body > .left-nav li > a h2 {
+            font-size: 5vw; } }
         body > .left-nav li > a h2:first-letter {
           border-bottom: 2px solid; }
 
@@ -435,6 +459,10 @@ body > .left-nav {
   .menu-icon:focus,
   .menu-icon-left:focus {
     outline: none; }
+
+@media (max-width: 640px) {
+  .back-icon {
+    display: none; } }
 
 .post-content {
   position: relative; }
@@ -497,6 +525,9 @@ body > .left-nav {
   list-style: none;
   position: absolute;
   width: 100%; }
+  @media (max-width: 640px) {
+    .social-links {
+      left: calc(50% - 12px); } }
   .social-links li {
     padding-right: 20px;
     width: 100%; }
@@ -512,6 +543,10 @@ body > .left-nav {
     transition: transform .1s ease-out;
     vertical-align: middle;
     width: 36px; }
+    @media (max-width: 640px) {
+      .social-links a {
+        height: 24px;
+        width: 24px; } }
     .social-links a:hover {
       border: 0;
       transform: scale(0.9); }

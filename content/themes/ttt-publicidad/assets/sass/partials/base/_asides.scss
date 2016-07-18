@@ -22,6 +22,10 @@
   left: 0;
   transition: left 300ms ease-out;
 
+  @include mq(mobile) {
+    width: 60px;
+  }
+
   .icon-logo,
   .icon-name {
     background-position: center;
@@ -43,11 +47,19 @@
     background-image: url('../img/logo-name_blue.svg');
     bottom: $distance * 4;
     height: $distance * 6;
+
+    @include mq(mobile) {
+      display: none;
+    }
   }
 }
 
 .menu-right {
   background-color: $primary;
   right: 0;
+
+  @include mq(mobile) {
+    width: 30px;
+  }
 }
 // -----------------------------------------------------------------------------

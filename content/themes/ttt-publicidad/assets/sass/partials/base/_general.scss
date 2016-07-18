@@ -51,8 +51,16 @@ body {
     left: 25vw;
     overflow: hidden;
 
+    @include mq(mobile) {
+      left: 66.66vw;
+    }
+
     .menu-left {
       left: 25vw;
+
+      @include mq(mobile) {
+        left: 66.66vw;
+      }
     }
   }
 }

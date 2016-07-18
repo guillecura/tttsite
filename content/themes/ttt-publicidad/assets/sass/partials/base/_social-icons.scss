@@ -12,6 +12,10 @@
   position: absolute;
   width: 100%;
 
+  @include mq(mobile) {
+    left: calc(50% - #{$icon / 2});
+  }
+
   li {
     padding-right: $distance * 2;
     width: 100%;
@@ -31,6 +35,11 @@
     transition: transform .1s ease-out;
     vertical-align: middle;
     width: $icon * 1.5;
+
+    @include mq(mobile) {
+      height: $icon;
+      width: $icon;
+    }
 
     &:hover {
       border: 0;
