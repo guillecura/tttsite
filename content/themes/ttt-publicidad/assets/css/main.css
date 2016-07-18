@@ -193,48 +193,6 @@ body {
     color: #0d1d2b;
     width: 100%; }
 
-.tag-template .post.tag-brands {
-  border-left: 6px solid transparent;
-  margin: 0;
-  max-width: 640px;
-  transition: all 150ms ease-out;
-  width: 100%; }
-  .tag-template .post.tag-brands:hover {
-    border-left: 6px solid #0d1d2b; }
-  .tag-template .post.tag-brands:last-of-type {
-    margin-bottom: 50px; }
-  .tag-template .post.tag-brands figure {
-    display: inline-block;
-    margin-right: -5px;
-    vertical-align: top;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin-left: 15px;
-    max-height: 10vw;
-    max-width: 10vw;
-    min-height: 150px;
-    min-width: 150px;
-    vertical-align: middle; }
-  .tag-template .post.tag-brands section {
-    display: inline-block;
-    margin-right: -5px;
-    vertical-align: top;
-    font-style: italic;
-    padding: 10px 30px;
-    vertical-align: middle; }
-    .tag-template .post.tag-brands section h5 {
-      font-style: normal; }
-    .tag-template .post.tag-brands section a {
-      font-style: normal;
-      text-decoration: underline; }
-      .tag-template .post.tag-brands section a:hover {
-        color: #0d1d2b; }
-  .tag-template .post.tag-brands hr {
-    border: 0;
-    border-top: 1px solid #e5e5e5;
-    margin: 20px 0 0; }
-
 .button {
   border: 1px solid black;
   color: black;
@@ -304,6 +262,12 @@ body {
     top: 0;
     width: 65vh;
     z-index: 5; }
+    @media (max-width: 640px) {
+      .hero-section .blog-cover {
+        background-position: right top -1vh;
+        background-size: 33.33vh;
+        height: 65vh;
+        width: 33.33vh; } }
   .hero-section .blog-title {
     height: calc(100vh - 30px);
     left: -15px;
@@ -313,6 +277,10 @@ body {
       position: absolute;
       top: 50%;
       transform: translateY(-50%); }
+      @media (max-width: 640px) {
+        .hero-section .blog-title > div {
+          top: calc(100% - 60px);
+          transform: translateY(-100%); } }
     .hero-section .blog-title h1 {
       color: #f2ff15;
       font-size: 8vw;
@@ -321,6 +289,9 @@ body {
       letter-spacing: .1em;
       text-transform: uppercase;
       word-spacing: 100vw; }
+      @media (max-width: 640px) {
+        .hero-section .blog-title h1 {
+          font-size: 15vw; } }
     .hero-section .blog-title h2 {
       color: #f2ff15;
       font-size: 5vw;
@@ -329,6 +300,9 @@ body {
       letter-spacing: .375em;
       text-transform: uppercase;
       word-spacing: 100vw; }
+      @media (max-width: 640px) {
+        .hero-section .blog-title h2 {
+          font-size: 9vw; } }
 
 body > .nav {
   background-color: rgba(13, 29, 43, 0.8);
@@ -344,13 +318,19 @@ body > .nav {
   body > .nav.opened {
     pointer-events: all;
     width: 25vw; }
+    @media (max-width: 640px) {
+      body > .nav.opened {
+        width: 66.66vw; } }
+    body > .nav.opened li {
+      animation: item-in .666s 150ms ease-out forwards; }
   body > .nav > ul {
     position: absolute;
     left: 60px;
     top: 110px; }
   body > .nav li {
     display: block;
-    list-style: none; }
+    list-style: none;
+    opacity: 0; }
     body > .nav li:hover a h2, body > .nav li.nav-current a h2 {
       color: #f2ff15; }
     body > .nav li > a {
@@ -365,6 +345,9 @@ body > .nav {
         line-height: 2.22em;
         position: relative;
         transition: all 150ms ease-out; }
+        @media (max-width: 640px) {
+          body > .nav li > a h2 {
+            font-size: 5vw; } }
         body > .nav li > a h2:first-letter {
           border-bottom: 2px solid; }
 
@@ -382,6 +365,8 @@ body > .left-nav {
   body > .left-nav.opened {
     pointer-events: all;
     width: 25vw; }
+    body > .left-nav.opened li {
+      animation: item-in .666s 150ms ease-out forwards; }
   body > .left-nav > .nav > ul {
     position: absolute;
     top: 50%;
@@ -389,7 +374,8 @@ body > .left-nav {
     right: 30px; }
   body > .left-nav li {
     display: block;
-    list-style: none; }
+    list-style: none;
+    opacity: 0; }
     body > .left-nav li:hover a h2 {
       text-shadow: 0.08em 0.08em #f2ff15; }
     body > .left-nav li > a {
@@ -449,69 +435,6 @@ body > .left-nav {
   .menu-icon:focus,
   .menu-icon-left:focus {
     outline: none; }
-
-.main-nav,
-.pages-nav {
-  border-top: 10px solid #0d1d2b;
-  height: 90px;
-  left: 10px;
-  max-width: calc(100% - 20px);
-  padding: 0;
-  pointer-events: none;
-  position: fixed;
-  top: 0;
-  transition: left 300ms ease-out;
-  width: 100%;
-  z-index: 9998; }
-  @media (max-width: 640px) {
-    .main-nav,
-    .pages-nav {
-      height: 63.33333px; } }
-  .main-nav.active,
-  .pages-nav.active {
-    background-color: white;
-    pointer-events: all; }
-    .main-nav.active::after,
-    .pages-nav.active::after {
-      border-bottom: 3px solid #f2ff15;
-      bottom: -1.5px;
-      content: '';
-      display: block;
-      left: 10px;
-      position: absolute;
-      width: calc(100% - 20px); }
-      @media (max-width: 640px) {
-        .main-nav.active::after,
-        .pages-nav.active::after {
-          left: 5px;
-          width: calc(100% - 10px); } }
-    .main-nav.active .logo,
-    .pages-nav.active .logo {
-      opacity: 1; }
-  .main-nav .logo,
-  .pages-nav .logo {
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: block;
-    font-size: 0;
-    height: 50px;
-    margin: 15px 20px;
-    opacity: 0;
-    transition: opacity 150ms ease-out;
-    width: 130px; }
-    @media (max-width: 640px) {
-      .main-nav .logo,
-      .pages-nav .logo {
-        height: 36.36364px;
-        margin: 10px;
-        width: 90px; } }
-
-.pages-nav {
-  pointer-events: all;
-  transition: left 300ms ease-out, background-color 150ms ease-out; }
-  .pages-nav .logo {
-    opacity: 1; }
 
 .post-content {
   position: relative; }
@@ -831,6 +754,11 @@ h6 {
     padding: 60px 30px;
     text-align: center;
     width: 40vw; }
+    @media (max-width: 640px) {
+      .home-template .content .white-box {
+        margin-top: -45px;
+        padding: 45px 0;
+        width: calc(100vw - 100px); } }
     .home-template .content .white-box .ttt-logo {
       background-position: center;
       background-repeat: no-repeat;
@@ -839,9 +767,16 @@ h6 {
       font-size: 0;
       height: 12vw;
       width: 12vw; }
+      @media (max-width: 640px) {
+        .home-template .content .white-box .ttt-logo {
+          height: 40vw;
+          width: 40vw; } }
     .home-template .content .white-box p {
       font-size: 0.85rem;
       margin: 30px auto; }
+      @media (max-width: 640px) {
+        .home-template .content .white-box p {
+          font-size: 0.7rem; } }
     .home-template .content .white-box ul {
       display: block;
       text-align: center;
@@ -849,11 +784,20 @@ h6 {
       .home-template .content .white-box ul li {
         display: inline-block;
         padding: 5px 0; }
+        @media (max-width: 640px) {
+          .home-template .content .white-box ul li {
+            width: 100%; } }
         .home-template .content .white-box ul li > * {
           font-size: 0.85rem;
           line-height: 24px; }
+          @media (max-width: 640px) {
+            .home-template .content .white-box ul li > * {
+              font-size: 0.7rem; } }
         .home-template .content .white-box ul li + li {
           margin-left: 30px; }
+          @media (max-width: 640px) {
+            .home-template .content .white-box ul li + li {
+              margin-left: 0; } }
     .home-template .content .white-box .facebook-link::before,
     .home-template .content .white-box .phone-link::before {
       background-color: #f2ff15;
@@ -866,6 +810,12 @@ h6 {
       margin-right: 10px;
       vertical-align: top;
       width: 24px; }
+      @media (max-width: 640px) {
+        .home-template .content .white-box .facebook-link::before,
+        .home-template .content .white-box .phone-link::before {
+          height: 19.2px;
+          margin-right: 5px;
+          width: 19.2px; } }
     .home-template .content .white-box .facebook-link::before {
       background-image: url("../img/icon-facebook_1.svg"); }
     .home-template .content .white-box .phone-link::before {

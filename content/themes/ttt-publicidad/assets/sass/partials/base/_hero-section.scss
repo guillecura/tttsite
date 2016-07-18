@@ -38,6 +38,13 @@
     top: 0;
     width: 65vh;
     z-index: 5;
+
+    @include mq(mobile) {
+      background-position: right top -1vh;
+      background-size: 33.33vh;
+      height: 65vh;
+      width: 33.33vh;
+    }
   }
 
   .blog-title {
@@ -48,6 +55,11 @@
 
     > div {
       @include vertical-center;
+
+      @include mq(mobile) {
+        top: calc(100% - #{$distance * 6});
+        transform: translateY(-100%);
+      }
     }
 
     h1 {
@@ -58,6 +70,10 @@
       letter-spacing: .1em;
       text-transform: uppercase;
       word-spacing: 100vw;
+
+      @include mq(mobile) {
+        font-size: 15vw;
+      }
     }
 
     h2 {
@@ -68,6 +84,10 @@
       letter-spacing: .375em;
       text-transform: uppercase;
       word-spacing: 100vw;
+
+      @include mq(mobile) {
+        font-size: 9vw;
+      }
     }
   }
 // -----------------------------------------------------------------------------

@@ -22,6 +22,14 @@ body > .nav {
   &.opened {
     pointer-events: all;
     width: 25vw;
+
+    @include mq(mobile) {
+      width: 66.66vw;
+    }
+
+    li {
+      animation: item-in .666s 150ms ease-out forwards; // Slide In animation
+    }
   }
 
 
@@ -38,6 +46,7 @@ body > .nav {
   li {
     display: block;
     list-style: none;
+    opacity: 0;
 
     &:hover,
     &.nav-current {
@@ -59,6 +68,10 @@ body > .nav {
         line-height: $line-height * 2;
         position: relative;
         transition: all 150ms ease-out;
+
+        @include mq(mobile) {
+          font-size: 5vw;
+        }
 
         &:first-letter {
           border-bottom: $border / 1.5 solid;
@@ -87,6 +100,10 @@ body > .left-nav {
   &.opened {
     pointer-events: all;
     width: 25vw;
+
+    li {
+      animation: item-in .666s 150ms ease-out forwards; // Slide In animation
+    }
   }
 
 
@@ -102,6 +119,7 @@ body > .left-nav {
   li {
     display: block;
     list-style: none;
+    opacity: 0;
 
     &:hover {
       a h2 {

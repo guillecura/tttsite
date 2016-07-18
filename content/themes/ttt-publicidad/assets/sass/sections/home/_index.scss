@@ -19,6 +19,12 @@
     text-align: center;
     width: 40vw;
 
+    @include mq(mobile) {
+      margin-top: -$distance * 4.5;
+      padding: $distance * 4.5 0;
+      width: calc(100vw - #{$distance * 10});
+    }
+
     .ttt-logo {
       background-position: center;
       background-repeat: no-repeat;
@@ -27,11 +33,20 @@
       font-size: 0;
       height: 12vw;
       width: 12vw;
+
+      @include mq(mobile) {
+        height: 40vw;
+        width: 40vw;
+      }
     }
 
     p {
       font-size: $fsmall;
       margin: $distance * 3 auto;
+
+      @include mq(mobile) {
+        font-size: $ftiny;
+      }
     }
 
     ul {
@@ -43,13 +58,25 @@
         display: inline-block;
         padding: $distance / 2 0;
 
+        @include mq(mobile) {
+          width: 100%;
+        }
+
         > * {
           font-size: $fsmall;
           line-height: $icon;
+
+          @include mq(mobile) {
+            font-size: $ftiny;
+          }
         }
 
         + li {
           margin-left: $distance * 3;
+
+          @include mq(mobile) {
+            margin-left: 0;
+          }
         }
       }
     }
@@ -67,6 +94,12 @@
         margin-right: $distance;
         vertical-align: top;
         width: $icon;
+
+        @include mq(mobile) {
+          height: $icon * .8;
+          margin-right: $distance / 2;
+          width: $icon * .8;
+        }
       }
     }
 
