@@ -76,6 +76,15 @@
       height: calc((100vw - #{$distance * 9}) / 1.5);
       width: calc(100% - #{$distance});
     }
+
+    > .image {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100%;
+      margin-left: 0;
+      width: 90%;
+    }
   }
 }
 

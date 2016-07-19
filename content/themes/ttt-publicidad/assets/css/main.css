@@ -484,9 +484,6 @@ body > .left-nav {
   .post-content > * {
     margin-left: 0;
     max-width: 640px; }
-    @media (min-width: 1024px) {
-      .post-content > * {
-        max-width: 100%; } }
   .post-content p {
     font-size: 1rem;
     line-height: 1.48em; }
@@ -740,6 +737,13 @@ h6 {
       .tag-who .box {
         height: calc((100vw - 90px) / 1.5);
         width: calc(100% - 10px); } }
+    .tag-who .box > .image {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100%;
+      margin-left: 0;
+      width: 90%; }
 
 .tag-what {
   max-width: calc(100% - 180px);
